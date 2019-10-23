@@ -1,0 +1,20 @@
+html {
+	font-size: 62.5%;
+}
+
+@include respond-to('small'){
+	html{
+		font-size: 81.25%;
+	}
+}
+
+@include respond-to('large'){
+	html{
+		font-size: 100%;
+	}
+}
+
+body {
+	font-family: 'Lato', sans-serif;
+	color: $darkGray;
+}

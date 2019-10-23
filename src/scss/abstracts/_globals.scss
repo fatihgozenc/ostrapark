@@ -1,0 +1,35 @@
+a {	
+	text-decoration: none;
+}
+
+hr {
+	color: $darkGray;
+	border: #666666 .5px solid;
+}
+
+.p-absolute{
+	position: absolute;
+}
+
+.d-block {
+	display: block !important;
+}
+
+.d-show {
+	opacity: 1 !important;
+	transition: all .4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.moveUpItem {
+	transform: translateY(-10%) scaleY(1.6);
+	transition: all .4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.moveUp {
+	transform: translateY(0) scaleY(1) !important;
+	transition: all .4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.d-none {
+	display: none;
+}

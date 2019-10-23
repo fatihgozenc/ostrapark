@@ -1,0 +1,48 @@
+.start-referenzen {
+	padding: 5%;
+	position: relative;
+
+	.start-referenzen-img {
+		height: 20rem;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.start-referenzen-text {
+		h2 {
+			margin-top: 2rem;
+		}
+		p {
+			font-size: 1.4rem;
+		}
+		a {
+			font-weight: 900;
+			font-size: 1.1rem;
+			letter-spacing: 2px;
+			color: $darkGray;
+		}
+	}
+
+	.start-referenzen-text p{
+		
+	}
+}
+
+.start-referenzen-nav {
+	position: absolute;
+	bottom: 10%;
+	width: 90%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-evenly; 
+
+	button {
+		height: 1.7rem;
+		width: 1.7rem;
+		border: none;
+		background: $darkGray;
+		border-radius: 1.7rem;
+	}
+
+}

@@ -1,0 +1,33 @@
+.start-locations {
+	padding: 5%;
+	color: #fff;
+
+	.start-locations-item {
+		text-align: center;
+		height: 20rem;
+		background-size: 100% 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+		position: relative;
+		transition: .5s all;
+
+		&:hover {
+			background-size: 120% 120%;
+			transition: .5s all;
+		}
+
+		a {
+			font-size: 1.4rem;
+			letter-spacing: 2px;
+			font-weight: 900;
+			position: absolute;
+			text-transform: uppercase;
+			left:0;
+			right: 0;
+			bottom: 5%;
+			color: #fff;
+		}
+	}
+
+	
+}

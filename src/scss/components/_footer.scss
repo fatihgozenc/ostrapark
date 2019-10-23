@@ -1,0 +1,74 @@
+.footer {
+	padding-bottom: 10rem;
+	a {
+		color: $darkGray;
+	}
+
+	.footer-top {
+		img{
+			height: 6rem;
+			padding: 3rem 0;
+		}
+		border-top: 1px solid $darkGray;
+	}
+
+	.footer-bottom {
+		img{
+			height: 12rem;
+			padding: 1rem 0 4rem;
+		}
+
+		p {
+			color: $darkGray;
+			padding: 1rem 0;
+
+			&:first-child{
+				font-size: 1.6em;
+				margin-bottom: 0;
+			}
+
+			&:nth-child(2){
+				margin-top: 0;
+				padding-top: 0;
+			}
+		}
+		
+		
+	}
+	.footer-top, .footer-bottom {
+		padding: 5%;
+		
+		color: $darkGray;
+		font-size: 1.2rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 1.5px;
+		text-align: center;
+	
+		& div  {
+			padding: 1.2rem 0;
+		}
+	
+		.address {
+			.address-title {
+				font-size: 1.6em;
+				margin-bottom: .3rem;
+			}
+	
+			.address-text {
+				font-size: 1em;
+				margin: 0;
+				font-weight: 900;
+			}
+	
+		}
+	}
+}
+
+
+
+.footer-bottom {
+	img {
+		height: 8rem;
+	}
+}

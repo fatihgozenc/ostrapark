@@ -1,0 +1,18 @@
+.preface {
+	color: $darkGray;
+	text-align: center;
+	padding: 5%;
+	font-size: 1.4rem;
+
+	.preface-title {
+		text-transform: uppercase;
+		font-weight: 900;
+	}
+
+	.preface-subtitle {
+		font-size: .8em;
+		font-weight: 900;
+		letter-spacing: 1.5px;
+		text-transform: uppercase;
+	}
+}

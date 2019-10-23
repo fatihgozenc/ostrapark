@@ -1,0 +1,101 @@
+header {
+	height: 8rem;
+	background-image: linear-gradient(to bottom, #000, transparent);
+	top:0;
+	position: fixed;
+	width: 100%;
+	z-index: 1;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+	
+	.navbar {
+		padding: 5%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: relative;
+
+		@include respond-to('large') {
+			padding: 2% 5%;
+		}
+
+		#logo {
+			height: 5rem;
+		}
+
+		.navbar-item-group {
+			font-size: 1.4rem;
+			position: absolute;
+			padding: 5%;
+			top: 5rem;
+			right:0;
+			left:0;
+			display: none;
+			opacity: 0;
+			text-align: center;
+			transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+			.navbar-item {
+				text-decoration: none;
+				position: relative;
+				color: #fff;
+				margin: 3rem 0;
+				padding: 3rem 0;
+				&:after{
+					content:'______';
+					letter-spacing: -.1rem;
+					display: block;
+					position: absolute;
+					bottom:0;
+					right:0;
+					left:0;					
+				}
+
+				// display: none;
+	
+				@include respond-to('small') {
+					display: block;
+				}
+			}
+		}
+
+		.navbar-item:first-child,
+		.navbar-item:last-child{
+			display: block;
+		}
+	}
+}
+
+/* --- Menu Toggler Animation Start --- */
+
+.bar1, .bar2, .bar3 {
+	width: 3rem;
+	height: 3px;
+	background-color: $lightGray;
+	margin: 8px 0;
+	transition: 0.4s;
+}
+
+.navopen {
+	height: 150vh;
+	transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+	background-image: linear-gradient(to bottom, #000 25%, transparent);
+}
+
+.change .bar1 {
+	-webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+	transform: rotate(-45deg) translate(-9px, 6px) ;
+	background-color: #fff;
+}
+
+.change .bar2 {
+	opacity: 0;
+}
+
+.change .bar3 {
+	-webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+	transform: rotate(45deg) translate(-8px, -8px) ;
+	background-color: #fff;
+}
+
+/* --- Menu Toggler Animation End --- */
