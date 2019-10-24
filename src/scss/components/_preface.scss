@@ -4,6 +4,10 @@
 	padding: 5%;
 	font-size: 1.4rem;
 
+	@include respond-to('large') {
+		padding: 7% 15%;
+	}
+
 	.preface-title {
 		text-transform: uppercase;
 		font-weight: 900;
@@ -14,5 +18,16 @@
 		font-weight: 900;
 		letter-spacing: 1.5px;
 		text-transform: uppercase;
+	}
+
+	.preface-texts {
+		p {
+			padding: 0 1rem;
+		}
+		@include respond-to('large') {
+			padding-top: 3%;
+			display: flex;
+			text-align: left;
+		}
 	}
 }

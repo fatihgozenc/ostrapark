@@ -1,7 +1,10 @@
 .start {
 	height: 100vh;
 	position: relative;
-	background: #000;
+
+	@include respond-to('large') {
+		overflow: hidden;
+	}
 
 	a {
 		color: #fff;
@@ -40,6 +43,16 @@
 				color: #fff;
 				text-align: center;
 				font-size: 1.6rem;
+
+				@include respond-to('large') {
+					text-align: left;
+					padding: 10% 5%;
+					width: 70%;
+				}
+
+				@include respond-to('xlarge') {
+					width: 50%;
+				}
 			}
 		}
 	}
@@ -54,12 +67,29 @@
 	display: flex;
 	justify-content: space-evenly;
 
+	@include respond-to('large') {
+		left: 5%;
+		width: initial;
+		justify-content: initial;
+	}
+
 	button {
 		height: 1.7rem;
 		width: 1.7rem;
 		border: none;
 		background: $darkGray;
 		border-radius: 1.7rem;
+
+		
+		
+
+		@include respond-to('large') {
+			margin-right: 2rem;
+		}
+	}
+
+	.carousel__dot--selected {
+			background: $lightGray;
 	}
 }
 

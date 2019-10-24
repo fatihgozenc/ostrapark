@@ -2,21 +2,50 @@
 	padding: 5%;
 	color: #fff;
 
+	.start-locations-wrapper {
+
+		@include respond-to('small') {
+			display: flex;
+			width: 100%;
+
+			a {
+				width: 25%;
+			}
+		}
+	}
+
 	.start-locations-item {
 		text-align: center;
 		height: 20rem;
 		background-size: 100% 100%;
 		background-position: center;
 		background-repeat: no-repeat;
+		background-size: cover;
 		position: relative;
 		transition: .5s all;
+		
+		@include respond-to('small') {
+			width: 100%;
+
+		}
 
 		&:hover {
 			background-size: 120% 120%;
 			transition: .5s all;
 		}
 
-		a {
+		&::after{
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 50%;
+			bottom:0;
+			left: 0;
+			background-image: linear-gradient(to top, #000, transparent);
+			z-index: 0;
+		}
+
+		span {
 			font-size: 1.4rem;
 			letter-spacing: 2px;
 			font-weight: 900;
@@ -26,6 +55,7 @@
 			right: 0;
 			bottom: 5%;
 			color: #fff;
+			z-index: 1;
 		}
 	}
 

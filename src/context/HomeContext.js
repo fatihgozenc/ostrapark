@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { withRouter } from "react-router";
+import { Loading } from '../components/Loading';
 
 //FOR CACHING
 import LRU from 'lru-cache';
@@ -77,7 +78,7 @@ export const HomeProvider = (props) => {
 	return(
 		<HomeContext.Provider value={[state, dispatch]} >
 			{console.log(state)}
-			{state.loading ? 'Loading...' : props.children }
+			{state.loading ? <Loading/> : props.children }
 		</HomeContext.Provider>
 	)
 

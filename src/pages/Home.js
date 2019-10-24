@@ -4,7 +4,7 @@ import Preface from '../components/Preface';
 import StartLocations from '../components/StartLocations';
 import StartReferenzen from '../components/StartReferenzen';
 
-const Home = () => {
+const Home = (props) => {
 	return (
 		<>
 			<Start/>

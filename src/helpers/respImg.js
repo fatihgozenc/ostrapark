@@ -1,5 +1,5 @@
 export const respImg = (x, y) => {
 	return (
-		window.innerWidth < 768 ? x : y
+		window.innerWidth < 769 ? x : y
 	)
 }

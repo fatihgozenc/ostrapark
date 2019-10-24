@@ -8,6 +8,7 @@ header {
 	text-transform: uppercase;
 	letter-spacing: 1.5px;
 	transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+	z-index: 3;
 	
 	.navbar {
 		padding: 5%;
@@ -16,12 +17,23 @@ header {
 		align-items: center;
 		position: relative;
 
+		@include respond-to('small') {
+			align-items: initial;
+		}
+
 		@include respond-to('large') {
 			padding: 2% 5%;
 		}
 
 		#logo {
 			height: 5rem;
+		}
+
+		.navbar-toggler{
+
+			@include respond-to('small') {
+				display: none;
+			}
 		}
 
 		.navbar-item-group {
@@ -35,12 +47,27 @@ header {
 			opacity: 0;
 			text-align: center;
 			transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+			@include respond-to('small') {
+				display: flex;
+				opacity: 1;
+				position: relative;
+				padding: 0;
+				top: initial;
+			}
 			.navbar-item {
 				text-decoration: none;
 				position: relative;
 				color: #fff;
 				margin: 3rem 0;
 				padding: 3rem 0;
+				display: block;
+
+				@include respond-to('small') {
+					margin: 0 0 0 4rem;
+					padding: 0;
+				}
+
 				&:after{
 					content:'______';
 					letter-spacing: -.1rem;
@@ -48,21 +75,19 @@ header {
 					position: absolute;
 					bottom:0;
 					right:0;
-					left:0;					
+					left:0;
+
+					@include respond-to('small') {
+						display: none;
+					}
 				}
 
 				// display: none;
 	
-				@include respond-to('small') {
-					display: block;
-				}
+				
 			}
 		}
 
-		.navbar-item:first-child,
-		.navbar-item:last-child{
-			display: block;
-		}
 	}
 }
 

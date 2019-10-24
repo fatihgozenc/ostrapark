@@ -9,13 +9,18 @@ const StartLocations = () => {
 	return (
 		<section className="start-locations">
 			<h2 className="section-title">LOCATIONS</h2>
-			{data.posts['locations'].map( item => ( 
-				<div key={item.id} className="start-locations-item" style={{backgroundImage: `url(${respImg(item.image.medium, item.image.large)})`}}>
-					<div className="start-slider-text">
-						<Link to={`/locations/${item.slug}`}>{item.title}</Link>
+			<div className="start-locations-wrapper">
+				{data.posts['locations'].map( item => ( 
+					<Link key={item.id} to={`/locations/${item.slug}`}>
+					<div className="start-locations-item" style={{backgroundImage: `url(${respImg(item.image.medium, item.image.large)})`}}>
+						<div className="start-slider-text">
+							<span> {item.title}</span>
+						</div>
 					</div>
-				</div>
-			))}
+					</Link>
+				))}
+			</div>
+			
 		</section>
 	)
 };

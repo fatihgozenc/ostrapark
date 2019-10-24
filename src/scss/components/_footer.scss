@@ -1,5 +1,5 @@
 .footer {
-	padding-bottom: 10rem;
+	padding: 5% 5% 10rem 5%;
 	a {
 		color: $darkGray;
 	}
@@ -13,9 +13,9 @@
 	}
 
 	.footer-bottom {
+		padding-top: 5%;
 		img{
 			height: 12rem;
-			padding: 1rem 0 4rem;
 		}
 
 		p {
@@ -36,7 +36,6 @@
 		
 	}
 	.footer-top, .footer-bottom {
-		padding: 5%;
 		
 		color: $darkGray;
 		font-size: 1.2rem;
@@ -61,6 +60,33 @@
 				font-weight: 900;
 			}
 	
+		}
+	}
+}
+
+.newsletter {
+	padding: 5%;
+
+	.newsletter-img {
+		height: 20rem;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	.newsletter-text {
+		text-transform: uppercase;
+		letter-spacing: 1.5px;
+		font-size: 1.6rem;
+		text-align: center;
+		padding: 10%;
+
+		a {
+			color: $darkGray;
+			font-size: .75em;
+			display: block;
+			padding: 10%;
+			font-weight: 900;
 		}
 	}
 }

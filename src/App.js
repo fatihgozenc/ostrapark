@@ -1,41 +1,64 @@
 import React from 'react';
 import { Switch, Route, __RouterContext } from 'react-router-dom';
-import { useTransition, animated } from 'react-spring';
+import { useTransition, animated, useSpring } from 'react-spring';
+
 
 // import Search from './pages/Search';
 // import NotFound from './pages/NotFound';
 import { HomeProvider } from './context/HomeContext';
-import { LocationProvider } from './context/LocationsContext';
+import { LocationsProvider } from './context/LocationsContext';
 
 import Header from './components/Header.js';
 import Footer from './components/Footer.js';
+
 import Home from './pages/Home.js';
+import Locations from './pages/Locations.js';
+import Location from './pages/Location.js';
+import Referenzen from './pages/Referenzen.js';
+import Referenz from './pages/Referenz.js';
+import Kontakt from './pages/Kontakt.js';
+import Impressum from './pages/Impressum.js';
+import Datenschutz from './pages/Datenschutz.js';
 
 import './App.scss';
 
 const App = () => {
 	const { location } = React.useContext(__RouterContext);
 	const transitions = useTransition(location, location => location.pathname, {
-		from:   { opacity: 0},
-		enter:  { opacity: 1},
-		leave:  { opacity: 0}
+		from:   { position: 'absolute', opacity: 0},
+		enter:  { position: 'initial', opacity: 1},
+		leave:  { position: 'absolute', opacity: 0}
+		// config: { delay: 1000, duration: 1000}
 	});
+
+	const opening = useSpring({
+		from: {opacity: 0}, to: {opacity: 1}, config: { delay: 1000, duration: 1000}
+		
+	})
 
 	return (
 		<HomeProvider>
 			<Header />
-			<main className="app" >
-				<LocationProvider>
-					{transitions.map(({ item, props, key }) => (
-						<animated.div key={key} style={props}>
-							<Switch location={item}>
-								<Route exact path="/" component={ Home } />
-							</Switch>
-						</animated.div>
-					))}
-					</LocationProvider>
-				</main>
-			
+			<animated.div style={opening}>
+				<main className="app" >
+						<LocationsProvider>
+						{transitions.map(({ item, props, key }) => (
+							<animated.div key={key} style={props}>
+								<Switch location={item}>
+									<Route exact path="/" component={ Home } />
+									<Route exact path="/locations" component={ Locations } />
+									<Route path="/locations/:slug" component={ Location } />
+									<Route exact path="/referenzen" component={ Referenzen } />
+									<Route path="/referenzen/:slug" component={ Referenz } />
+									<Route exact path="/kontakt" component={ Kontakt } />
+									<Route exact path="/impressum" component={ Impressum } />
+									<Route exact path="/datenschutz" component={ Datenschutz } />
+								</Switch>
+							</animated.div>
+						))}
+						</LocationsProvider>
+					</main>
+					</animated.div>
 			<Footer />
 		</HomeProvider>
 	);

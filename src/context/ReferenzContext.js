@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { withRouter } from "react-router";
+import { Loading } from '../components/Loading';
 
 //FOR CACHING
 import LRU from 'lru-cache';
@@ -76,7 +77,7 @@ export const ReferenzenProvider = (props) => {
 
 	return(
 		<ReferenzenContext.Provider value={[state, dispatch]} >
-			{state.loading ? 'Loading...' : props.children }
+			{props.children }
 		</ReferenzenContext.Provider>
 	)
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { withRouter } from "react-router";
+import { Loading } from '../components/Loading';
 
 //FOR CACHING
 import LRU from 'lru-cache';
@@ -52,9 +53,9 @@ const reducer = (currentState, action) => {
 	}
 };
 
-export const LocationContext = React.createContext();
+export const LocationsContext = React.createContext();
 
-export const LocationProvider = (props) => {
+export const LocationsProvider = (props) => {
 	const [state, dispatch] = React.useReducer(reducer, initialState);
 
 	React.useEffect(() => {
@@ -75,12 +76,13 @@ export const LocationProvider = (props) => {
 	}, []);
 
 	return(
-		<LocationContext.Provider value={[state, dispatch]} >
-			{state.loading ? 'Loading...' : props.children }
-		</LocationContext.Provider>
+		<LocationsContext.Provider value={[state, dispatch]} >
+			{state.loading ? ' ' : props.children }
+		</LocationsContext.Provider>
 	)
 
 };
 
 
-const LocationProviderWithRouter = withRouter(LocationContext);
+
+const LocationsProviderWithRouter = withRouter(LocationsContext);

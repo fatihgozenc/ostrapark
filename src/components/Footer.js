@@ -1,17 +1,28 @@
 import React from 'react';
 import { HomeContext } from '../context/HomeContext';
 import { Link } from 'react-router-dom';
+import {animated, useSpring } from 'react-spring';
+
 
 const Footer = () => {
 	const [data] = React.useContext(HomeContext);
+
+	const opening = useSpring({
+		opacity: 1, from: {opacity: 0}, delay: 2000
+	})
+
 	return (
 		<>
+			<animated.div style={opening}>
 			<div className="newsletter">
-				<h2 className="section-title">Newsletter</h2>
-				<span>Newsletter</span>
+				<h2 className="section-title">NEWSLETTER</h2>
+				{/* <span>Newsletter</span> */}
 				<div className="newsletter-wrapper">
-					<div className="newsletter-text"></div>
-					<div className="newsletter-img"></div>
+					<div className="newsletter-img" style={{backgroundImage: `url(${data.posts.newsletter_bild})`}}/>
+					<div className="newsletter-text">{data.posts.newsletter_text}
+						<a href="#">NEWSLETTER ABONNIEREN &rarr;</a>
+					</div>
+					
 				</div>
 			</div>
 			<footer className="footer">
@@ -51,6 +62,8 @@ const Footer = () => {
 				</div>
 				
 			</footer>
+			</animated.div>
+
 		</>
 	)
 };
