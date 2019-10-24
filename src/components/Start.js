@@ -9,15 +9,16 @@ import {respImg} from '../helpers/respImg';
 
 const Start = () => {
 	const [data] = React.useContext(HomeContext);
+	// let locData = data.posts['locations'].reverse();
 	const opening = useSpring({
 		opacity: 1, from: {opacity: 0}, delay: 400
 	})
-
+	
 	return (
 		<section className="start">
 			<animated.div style={opening}>
 				<CarouselProvider
-					naturalSlideWidth={respImg(100, 160)}
+					naturalSlideWidth={respImg(100, 200)}
 					naturalSlideHeight={respImg(125, 100)}
 					totalSlides={4}
 					isPlaying={true}

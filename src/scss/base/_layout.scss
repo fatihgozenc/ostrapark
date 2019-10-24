@@ -1,5 +1,6 @@
 html {
 	font-size: 62.5%;
+	scroll-behavior: smooth;
 }
 
 @include respond-to('small'){
@@ -8,7 +9,7 @@ html {
 	}
 }
 
-@include respond-to('large'){
+@include respond-to('xlarge'){
 	html{
 		font-size: 100%;
 	}
@@ -26,6 +27,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	background-color: $lightGray;
+	letter-spacing: 2.3px;
 
 	div {
 		width: 10rem;
@@ -33,6 +35,6 @@ body {
 	span {
 		align-self: center;
 		text-transform: uppercase;
-		font-size: 1.6rem;
+		font-size: 1.4rem;
 	}
 }

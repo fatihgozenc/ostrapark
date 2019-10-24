@@ -1,6 +1,30 @@
 a {	
 	text-decoration: none;
+
+	&:focus, &:active {
+		outline: none !important;
+	}
 }
+
+i {
+	height: 3rem;
+	width: 3rem;
+	border-radius: 3rem;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	display: inline-block;
+	margin-right: 2rem;
+}
+
+.icon-instagram {
+	background-image: url('../../assets/icons/icon-instagram.png')
+}
+
+.icon-facebook {
+	background-image: url('../../assets/icons/icon-facebook.png')
+}
+
 
 hr {
 	color: $darkGray;

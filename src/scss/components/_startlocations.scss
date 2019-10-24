@@ -2,12 +2,43 @@
 	padding: 5%;
 	color: #fff;
 
+	@include lg {
+		padding: 5% 0 0 16%;
+	}
+
+	.section-title {
+		position: relative;
+		span {
+			display: none;
+			@include respond-to('large'){
+				display: block;
+				position: absolute;
+				opacity: .1;
+				font-weight: 300;
+				top: -130%;
+				font-size: 12rem;
+				right: 0;
+			}
+
+			@include xxl {
+				top: -250%;
+				font-size: 17rem;
+			} 
+		}
+		@include respond-to('large'){
+			width: 100%;
+			text-align: left;
+			font-size: 3.3rem;
+			font-weight: 700;
+		}
+	
+	}
+
 	.start-locations-wrapper {
 
-		@include respond-to('small') {
+		@include respond-to('large') {
 			display: flex;
 			width: 100%;
-
 			a {
 				width: 25%;
 			}
@@ -16,7 +47,7 @@
 
 	.start-locations-item {
 		text-align: center;
-		height: 20rem;
+		height: 24vh;
 		background-size: 100% 100%;
 		background-position: center;
 		background-repeat: no-repeat;
@@ -25,8 +56,10 @@
 		transition: .5s all;
 		
 		@include respond-to('small') {
-			width: 100%;
+		}
 
+		@include respond-to('large') {
+			background-size: 100% 100%;
 		}
 
 		&:hover {
@@ -46,9 +79,9 @@
 		}
 
 		span {
-			font-size: 1.4rem;
+			font-size: 1.3rem;
 			letter-spacing: 2px;
-			font-weight: 900;
+			font-weight: 300;
 			position: absolute;
 			text-transform: uppercase;
 			left:0;

@@ -85,4 +85,4 @@ export const HomeProvider = (props) => {
 };
 
 
-const HomeProviderWithRouter = withRouter(HomeContext);
+export const HomeProviderWithRouter = withRouter(HomeContext);

@@ -1,0 +1,24 @@
+.locations-props {
+	display: flex;
+	height: 50vh;
+
+	.locations-props-icons {
+		background: darkcyan;
+		width: 16%;
+	}
+
+	.locations-props-item {
+		background: cornflowerblue;
+		width: 21%;
+	}
+}
+
+.scroll-to-see {
+	text-align: center;
+	display: block;
+	padding: 6% 0;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: $darkGray;
+	cursor: pointer;
+}

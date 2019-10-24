@@ -1,48 +1,172 @@
 .start-referenzen {
 	padding: 5%;
+	margin: 10% 0;
 	position: relative;
 
-	.start-referenzen-img {
-		height: 20rem;
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
+	@include respond-to('large'){
+		padding: 5% 0;
 	}
 
-	.start-referenzen-text {
-		h2 {
-			margin-top: 2rem;
-		}
-		p {
-			font-size: 1.4rem;
-		}
-		a {
-			font-weight: 900;
-			font-size: 1.1rem;
-			letter-spacing: 2px;
-			color: $darkGray;
-		}
-	}
+	.section-title {
+		position: relative;
 
-	.start-referenzen-text p{
+		@include respond-to('large'){
+			width: 95%;
+			text-align: left;
+			padding-left: 5%;
+			font-size: 3.3rem;
+			font-weight: 700;
+		}
+
+		span {
+			display: none;
+		
+			@include respond-to('large'){
+				display: block;
+				position: absolute;
+				opacity: .1;
+				font-weight: 100;
+				top: -130%;
+				font-size: 12rem;
+				right: 4%;
+			}
+
+			@include xxl {
+				top: -250%;
+				font-size: 17rem;
+			} 
+			
+		}
+		
 		
 	}
-}
 
-.start-referenzen-nav {
-	position: absolute;
-	bottom: 10%;
-	width: 90%;
-	margin: 0 auto;
-	display: flex;
-	justify-content: space-evenly; 
 
-	button {
-		height: 1.7rem;
-		width: 1.7rem;
-		border: none;
-		background: $darkGray;
-		border-radius: 1.7rem;
+	.start-referenzen-item {
+		height: 50vh;
+		@include respond-to('large'){
+			display: flex;
+			align-items: center;
+
+			.break {
+				width: 3vw;
+			}
+		}
+
+		.start-referenzen-img {
+			height: 20rem;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+
+			@include respond-to('large'){
+				width: 50%;
+				height: 50vh;
+				padding-left: 1%;
+			}
+
+			@include xxl {
+				height: 64vh;
+			}
+		}
+	
+		.start-referenzen-text {
+			h2 {
+				margin: 3rem 0;
+				font-size: 1.7rem;
+				position: relative;
+
+				@include respond-to('large'){
+					font-size: 2.2rem;
+					width: 50%;
+					text-align: left;
+				}
+
+				&:after{
+					content:'______';
+					letter-spacing: -.1rem;
+					display: block;
+					position: absolute;
+					bottom: -2.3rem;
+				}
+			}
+
+			p {
+				font-size: 1.4rem;
+				@include respond-to('large'){
+					padding: 2% 5% 2% 0;
+				}
+			}
+
+			a {
+				font-weight: 900;
+				font-size: 1.1rem;
+				letter-spacing: 2px;
+				color: $darkGray;
+			}
+
+			@include respond-to('large'){
+				width: 50%;
+				margin-bottom: 7rem;
+			}
+		}
 	}
 
+
+	.referenzen-nav-group {
+		@include respond-to('large') {
+			display: flex;
+	
+			.break {
+				width: 50%;
+			}
+		}
+	
+		
+	}
+
+
+	.start-referenzen-nav {
+		position: absolute;
+		bottom: 10%;
+		width: 90%;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-evenly; 
+
+		@include respond-to('large') {
+			left: 5%;
+			width: initial;
+			justify-content: right;
+			position: relative;
+		}
+
+
+		
+
+		button {
+			height: 1.7rem;
+			width: 1.7rem;
+			border: none;
+			background: $darkGray;
+			border-radius: 1.7rem;
+
+			@include respond-to('large') {
+				margin-right: 2rem;
+			}
+	
+			&:focus, &:active {
+				outline: none;
+			}
+		}
+	
+		.carousel__dot--selected {
+				background: #fff;
+		}
+	}
 }
+.carousel__slide-focus-ring {
+	display: none !important;
+}
+
+

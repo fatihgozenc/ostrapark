@@ -1,4 +1,10 @@
 .footer {
+	hr {
+		@include lg {
+			display: none;
+		}
+	}
+
 	padding: 5% 5% 10rem 5%;
 	a {
 		color: $darkGray;
@@ -14,8 +20,18 @@
 
 	.footer-bottom {
 		padding-top: 5%;
+
+		@include lg {
+			border-top: 1px solid $darkGray;
+			padding-top: 2%;
+		}
+
 		img{
 			height: 12rem;
+
+			@include lg {
+				padding-right: 2.8rem;
+			}
 		}
 
 		p {
@@ -26,17 +42,17 @@
 				font-size: 1.6em;
 				margin-bottom: 0;
 			}
+		}
 
-			&:nth-child(2){
-				margin-top: 0;
-				padding-top: 0;
+		b {
+			font-weight: 900;
+
+			@include lg {
+				display: block;
 			}
 		}
-		
-		
 	}
 	.footer-top, .footer-bottom {
-		
 		color: $darkGray;
 		font-size: 1.2rem;
 		font-weight: 700;
@@ -52,6 +68,10 @@
 			.address-title {
 				font-size: 1.6em;
 				margin-bottom: .3rem;
+				@include lg {
+					margin: 0;
+					
+				}
 			}
 	
 			.address-text {
@@ -61,34 +81,117 @@
 			}
 	
 		}
+
+		@include lg {
+			font-size: .9rem;
+			display: flex;
+			text-align: left;
+			align-items: center;
+			width: 100%;
+			justify-content: space-between;
+		}
 	}
 }
 
+.contact-router{
+	padding: 5%;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 900;
+	font-size: 1.2rem;
+	display: block;
+	border-top: 1px solid $darkGray;
+	border-bottom: 1px solid $darkGray;
+	color: $darkGray;
+}
+
 .newsletter {
+	margin-top: 15%;
 	padding: 5%;
 
-	.newsletter-img {
-		height: 20rem;
-		background-position: center;
-		background-size: cover;
-		background-repeat: no-repeat;
+	@include lg {
+		padding: 0%;
 	}
 
-	.newsletter-text {
-		text-transform: uppercase;
-		letter-spacing: 1.5px;
-		font-size: 1.6rem;
-		text-align: center;
-		padding: 10%;
+	.section-title {
+		position: relative;
+		
+		span {
+			display: none;
+			@include lg{
+				display: block;
+				position: absolute;
+				opacity: .1;
+				font-weight: 300;
+				top: -130%;
+				font-size: 12rem;
+				left: 4%;
+			}
 
-		a {
-			color: $darkGray;
-			font-size: .75em;
-			display: block;
-			padding: 10%;
-			font-weight: 900;
+			@include xxl {
+				top: -250%;
+				font-size: 17rem;
+			} 
+		}
+		@include lg{
+			width: 95%;
+			text-align: right;
+			font-size: 3.3rem;
+			font-weight: 700;
 		}
 	}
+
+	.newsletter-wrapper {
+
+		@include lg {
+			display: flex;
+		}
+
+		.newsletter-img {
+			height: 20rem;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+	
+			@include lg{
+				width: 50%;
+				height: 50vh;
+				padding-left: 1%;
+				order: 1;
+			}
+	
+			@include xxl {
+				height: 64vh;
+			}
+		}
+	
+		.newsletter-text {
+			text-transform: uppercase;
+			letter-spacing: 1.5px;
+			font-size: 1.6rem;
+			text-align: center;
+			padding: 10%;
+	
+			a {
+				color: $darkGray;
+				font-size: .75em;
+				display: block;
+				padding: 10%;
+				font-weight: 900;
+
+				@include lg{
+					padding: 10% 0 0 0;
+				}
+			}
+
+			@include lg{
+				text-align: initial;
+			}
+		}
+	}
+
+	
 }
 
 

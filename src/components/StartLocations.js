@@ -8,7 +8,7 @@ const StartLocations = () => {
 
 	return (
 		<section className="start-locations">
-			<h2 className="section-title">LOCATIONS</h2>
+			<h2 className="section-title">LOCATIONS<span>LOCATIONS</span></h2>
 			<div className="start-locations-wrapper">
 				{data.posts['locations'].map( item => ( 
 					<Link key={item.id} to={`/locations/${item.slug}`}>

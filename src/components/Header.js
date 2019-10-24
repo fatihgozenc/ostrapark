@@ -31,7 +31,30 @@ const Header = () => {
 				}, 1);
 			}
 		}
-		
+	}
+
+	const toggleAnimScroll = (e) => {
+		window.scrollTo(0, 0);
+		if(window.innerWidth < 600) {
+			setToggle(!toggle)
+			menuToggler.current.classList.toggle('change');
+			header.current.classList.toggle('navopen');
+			let group = navbarGroup.current;
+			if (group.classList.contains('d-block')) {
+				group.classList.remove('d-show');
+				group.classList.remove('moveUp');
+				setTimeout(() => {
+					group.classList.remove('d-block')
+				}, 500);
+			} else {
+				group.classList.add('d-block');
+				
+				setTimeout(() => {
+					group.classList.add('moveUp');
+					group.classList.add('d-show')
+				}, 1);
+			}
+		}
 	}
 
 	const opening = useSpring({
@@ -44,17 +67,17 @@ const Header = () => {
 
 		<header ref={header}>
 			<nav className="navbar">
-				<NavLink className="navbar-item" to={'/'} onClick={toggle ? toggleAnim : null} >
+				<NavLink className="navbar-item" to={'/'} onClick={toggle ? toggleAnimScroll : null} >
 					 <img src={data.posts['logo_weiss']} id="logo" />
 				</NavLink>
 				<div ref={navbarGroup} className="navbar-item-group moveUpItem" >
-					<NavLink className="navbar-item" to={'/locations'} onClick={toggleAnim}>
+					<NavLink className="navbar-item" to={'/locations'} onClick={toggleAnimScroll}>
 						Locations
 					</NavLink>
-					<NavLink className="navbar-item" to={'/referenzen'} onClick={toggleAnim}>
+					<NavLink className="navbar-item" to={'/referenzen'} onClick={toggleAnimScroll}>
 						Referenzen
 					</NavLink>
-					<NavLink className="navbar-item" to={'/kontakt'} onClick={toggleAnim}>
+					<NavLink className="navbar-item" to={'/kontakt'} onClick={toggleAnimScroll}>
 						Kontakt
 					</NavLink>
 				</div>

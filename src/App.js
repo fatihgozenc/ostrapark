@@ -25,8 +25,8 @@ import './App.scss';
 const App = () => {
 	const { location } = React.useContext(__RouterContext);
 	const transitions = useTransition(location, location => location.pathname, {
-		from:   { position: 'absolute', opacity: 0},
-		enter:  { position: 'initial', opacity: 1},
+		from:   { opacity: 0},
+		enter:  { opacity: 1},
 		leave:  { position: 'absolute', opacity: 0}
 		// config: { delay: 1000, duration: 1000}
 	});

@@ -4,34 +4,43 @@ import { HomeContext } from '../context/HomeContext';
 import { CarouselProvider, Slider, Slide, DotGroup } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import {respImg} from '../helpers/respImg';
+import {respFunction} from '../helpers/respFunction';
+
 
 const StartReferenzen = () => {
 	const [data] = React.useContext(HomeContext);
 
 	return (
 		<section className="start-referenzen">
-			<h2 className="section-title">REFERENZEN</h2>
+			<h2 className="section-title">REFERENZEN<span>REFERENZEN</span></h2>
 			<CarouselProvider
-					naturalSlideWidth={100}
-					naturalSlideHeight={140}
+					naturalSlideWidth={respFunction(100, 100, 300)}
+					naturalSlideHeight={respFunction(150, 100, 100)}
 					totalSlides={6}
 					isPlaying={true}
 					interval={6000}
-					touchEnabled={true}
-					infinite={true}>
+					touchEnabled={respImg(true, false)}
+					dragEnabled={respImg(true, false)}
+					infinite={respImg(true, false)}>
 					<Slider className="start-referenzen-slider">
 						{data.posts['referenzen'].map( item => ( 
 						<Slide key={item.id} index={item.id}>
-							<div className="start-referenzen-img" style={{backgroundImage: `url(${respImg(item.image.medium, item.image.large)})`}}/>
-							<div className="start-referenzen-text">
-								<h2 className="section-subtitle">{item.title}</h2>
-								<p>{item.excerpt}</p>
-								<Link to={`/referenzen/${item.slug}`}>MEHR LESEN &rarr;</Link>
+							<div className="start-referenzen-item">
+								<div className="start-referenzen-img" style={{backgroundImage: `url(${respImg(item.image.medium, item.image.large)})`}}/>
+								<div className="break"/>
+								<div className="start-referenzen-text">
+									<h2 className="section-subtitle">{item.title}</h2>
+									<p>{item.excerpt}</p>
+									<Link to={`/referenzen/${item.slug}`}>MEHR LESEN &rarr;</Link>
+								</div>
 							</div>
 						</Slide>
 						))}
 					</Slider>
-					<DotGroup className="start-referenzen-nav"/>
+					<div className="referenzen-nav-group">
+						<div className="break"/>
+						<DotGroup className="start-referenzen-nav"/>
+					</div>
 				</CarouselProvider>
 		</section>
 	)
