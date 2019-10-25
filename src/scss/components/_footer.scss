@@ -1,13 +1,15 @@
 .footer {
+
+	padding: 5% 5% 10rem 5%;
+
+	a {
+		color: $darkGray;
+	}
+
 	hr {
 		@include lg {
 			display: none;
 		}
-	}
-
-	padding: 5% 5% 10rem 5%;
-	a {
-		color: $darkGray;
 	}
 
 	.footer-top {
@@ -104,10 +106,19 @@
 	border-top: 1px solid $darkGray;
 	border-bottom: 1px solid $darkGray;
 	color: $darkGray;
+
+	@include lg{
+		padding: 2%;
+		font-weight: 300;
+		margin: 6vh 5% 17vh 5%;
+		font-size: 1.8rem;
+		br {
+			display: none;
+		}
+	}
 }
 
 .newsletter {
-	margin-top: 15%;
 	padding: 5%;
 
 	@include lg {

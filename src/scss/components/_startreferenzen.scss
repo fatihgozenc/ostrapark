@@ -135,7 +135,7 @@
 		justify-content: space-evenly; 
 
 		@include respond-to('large') {
-			left: 5%;
+			// left: 5%;
 			width: initial;
 			justify-content: right;
 			position: relative;

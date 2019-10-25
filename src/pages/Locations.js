@@ -2,7 +2,6 @@ import React from 'react';
 import { LocationsContext } from '../context/LocationsContext';
 import { Link } from 'react-router-dom';
 import {respImg} from '../helpers/respImg';
-import { tsConstructSignatureDeclaration } from '@babel/types';
 
 const Locations = (props) => {
 	const [data] = React.useContext(LocationsContext);
@@ -36,14 +35,20 @@ const Locations = (props) => {
 				</section>
 
 				<section className="locations-props" ref={locationsProps}>
-					<div className="locations-props-icons"></div>
+					<div className="locations-props-icons">
+						<span><i className="icon-flache"></i></span>
+						<span><i className="icon-personen"></i></span>
+						<span><i className="icon-firmen"></i><i className="icon-privat"></i></span>
+						<span><i className="icon-parkplatze"></i></span>
+						<span><i className="icon-outdoor"></i><i className="icon-indoor"></i></span>
+					</div>
 					{data.posts.map( item => (
 						<div key={item.id} className="locations-props-item">
 							<span>{item.flache}</span>
 							<span>{item.reihen}</span>
 							<span>{item.firmen_or_privat}</span>
 							<span>{item.parkplatz}</span>
-							<span>{item.inandout}</span>
+							<span>{item.inorout}</span>
 						</div>
 					))}
 				</section>

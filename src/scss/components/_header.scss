@@ -18,6 +18,7 @@ header {
 		top:0;
 		background-image: linear-gradient(to bottom, #000, transparent);
 		z-index: 0;
+		pointer-events: none;
 	}
 	
 	.navbar {

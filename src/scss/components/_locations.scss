@@ -1,15 +1,33 @@
 .locations-props {
 	display: flex;
 	height: 50vh;
+	align-items: center;
+	margin-bottom: 10vh;
+
+	span {
+		display: block;
+		text-align: center;
+		padding: 10%;
+	}
 
 	.locations-props-icons {
-		background: darkcyan;
 		width: 16%;
+		border-right: 1px solid $darkGray;
 	}
 
 	.locations-props-item {
-		background: cornflowerblue;
 		width: 21%;
+		border-right: 1px solid $darkGray;
+
+		&:last-child {
+			border: none;
+		}
+
+		span {
+			padding: 11%;
+			font-size: 1.4rem;
+		}
+		
 	}
 }
 

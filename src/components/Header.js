@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import {animated, useSpring } from 'react-spring';
 
 const Header = () => {
-	const [data, setData] = React.useContext(HomeContext);
+	const [data] = React.useContext(HomeContext);
 	const [toggle, setToggle] = useState(false);
 	const navbarGroup = React.createRef();
 	const header = React.createRef();
@@ -68,7 +68,7 @@ const Header = () => {
 		<header ref={header}>
 			<nav className="navbar">
 				<NavLink className="navbar-item" to={'/'} onClick={toggle ? toggleAnimScroll : null} >
-					 <img src={data.posts['logo_weiss']} id="logo" />
+					 <img src={data.posts['logo_weiss']} alt={data.posts['address_title'] + ' Logo'} id="logo" />
 				</NavLink>
 				<div ref={navbarGroup} className="navbar-item-group moveUpItem" >
 					<NavLink className="navbar-item" to={'/locations'} onClick={toggleAnimScroll}>

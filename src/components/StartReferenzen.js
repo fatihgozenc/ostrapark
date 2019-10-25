@@ -14,7 +14,7 @@ const StartReferenzen = () => {
 		<section className="start-referenzen">
 			<h2 className="section-title">REFERENZEN<span>REFERENZEN</span></h2>
 			<CarouselProvider
-					naturalSlideWidth={respFunction(100, 100, 300)}
+					naturalSlideWidth={respFunction(100, 100, 320)}
 					naturalSlideHeight={respFunction(150, 100, 100)}
 					totalSlides={6}
 					isPlaying={true}

@@ -7,9 +7,10 @@ a {
 }
 
 i {
+	filter: grayscale(1);
 	height: 3rem;
 	width: 3rem;
-	border-radius: 3rem;
+	// border-radius: 3rem;
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -25,6 +26,37 @@ i {
 	background-image: url('../../assets/icons/icon-facebook.png')
 }
 
+.icon-firmen {
+	background-image: url('../../assets/icons/icon-firmen.png')
+}
+
+.icon-flache {
+	background-image: url('../../assets/icons/icon-flache.png')
+}
+
+.icon-indoor {
+	background-image: url('../../assets/icons/icon-indoor.png')
+}
+
+.icon-outdoor {
+	background-image: url('../../assets/icons/icon-outdoor.png')
+}
+
+.icon-parkplatze {
+	background-image: url('../../assets/icons/icon-parkplatze.png')
+}
+
+.icon-personen {
+	background-image: url('../../assets/icons/icon-personen.png')
+}
+
+.icon-privat {
+	background-image: url('../../assets/icons/icon-privat.png')
+}
+
+.right-arrow {
+	font-size: 2.8rem;
+}
 
 hr {
 	color: $darkGray;

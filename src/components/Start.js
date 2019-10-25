@@ -33,7 +33,7 @@ const Start = () => {
 								<div className="start-slider-text">
 									<h2>{item.title}</h2>
 									<p>{item.excerpt}</p>
-									<Link to={`/locations/${item.slug}`}>MEHR LESEN</Link>
+									<Link to={`/locations/${item.slug}`}>MEHR LESEN <span className="right-arrow">&rarr;</span></Link>
 								</div>
 							</div>
 						</Slide>

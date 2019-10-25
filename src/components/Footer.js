@@ -14,8 +14,8 @@ const Footer = () => {
 	return (
 		<>
 			<animated.div style={opening}>
-			<div className="newsletter">
 			<Link className="contact-router" to={'/kontakt'}>Haben Sie fragen?<br/> Kontaktieren Sie Uns! &rarr;</Link>
+			<div className="newsletter">
 				<h2 className="section-title">NEWSLETTER<span>NEWSLETTER</span></h2>
 				<div className="newsletter-wrapper">
 					<div className="newsletter-img" style={{backgroundImage: `url(${data.posts.newsletter_bild})`}}/>
@@ -52,9 +52,9 @@ const Footer = () => {
 				</div>
 				<div className="footer-bottom">
 					<img src={data.posts['gd_logo']} alt="goldendoor-logo"/>
-						<p><b>Golden Door GmbH</b> <br/>{data.posts['gd_address']}</p>
-						<p>Ostrapark ist eine Untermarke von Golden Door</p>
-						<p><a href='http://goldendoor.group'>goldendoor.group</a></p>
+					<p><b>Golden Door GmbH</b> <br/>{data.posts['gd_address']}</p>
+					<p>Ostrapark ist eine Untermarke von Golden Door</p>
+					<p><a href='http://goldendoor.group'>goldendoor.group</a></p>
 				</div>
 				
 			</footer>
