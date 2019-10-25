@@ -8,7 +8,7 @@ import LRU from 'lru-cache';
 import md5 from 'md5';
 import produce from 'immer';//MUTATE DATA IN JS
 
-const referenzenEndPoint = `http://ostrapark.narciss-taurus.de/wp-json/ostra/v1/referenzen`;
+const referenzenEndPoint = `http://ostrapark.narciss-taurus.de/wordpress/wp-json/ostra/v1/referenzen`;
 
 const initialState = {
 	loading: true,

@@ -8,7 +8,7 @@ import LRU from 'lru-cache';
 import md5 from 'md5';
 import produce from 'immer';//MUTATE DATA IN JS
 
-const homeEndpoint = `http://ostrapark.narciss-taurus.de/wp-json/ostra/v1/home`;
+const homeEndpoint = `http://ostrapark.narciss-taurus.de/wordpress/wp-json/ostra/v1/home`;
 
 const initialState = {
 	loading: true,

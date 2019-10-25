@@ -24,7 +24,6 @@ const Header = () => {
 				}, 500);
 			} else {
 				group.classList.add('d-block');
-				
 				setTimeout(() => {
 					group.classList.add('moveUp');
 					group.classList.add('d-show')
@@ -59,8 +58,7 @@ const Header = () => {
 
 	const opening = useSpring({
 		from: {opacity: 0}, to: {opacity: 1}
-		
-	})
+	});
 	
 	return (
 		<animated.div style={opening}>
