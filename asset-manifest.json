@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/ostrapark/static/css/main.724d9324.chunk.css",
+    "main.js": "/ostrapark/static/js/main.324388fd.chunk.js",
+    "main.js.map": "/ostrapark/static/js/main.324388fd.chunk.js.map",
+    "runtime-main.js": "/ostrapark/static/js/runtime-main.8ef0b7e4.js",
+    "runtime-main.js.map": "/ostrapark/static/js/runtime-main.8ef0b7e4.js.map",
+    "static/css/2.1fd2b905.chunk.css": "/ostrapark/static/css/2.1fd2b905.chunk.css",
+    "static/js/2.1da970ba.chunk.js": "/ostrapark/static/js/2.1da970ba.chunk.js",
+    "static/js/2.1da970ba.chunk.js.map": "/ostrapark/static/js/2.1da970ba.chunk.js.map",
+    "index.html": "/ostrapark/index.html",
+    "precache-manifest.302ec9723e88054428941133e060091e.js": "/ostrapark/precache-manifest.302ec9723e88054428941133e060091e.js",
+    "service-worker.js": "/ostrapark/service-worker.js",
+    "static/css/2.1fd2b905.chunk.css.map": "/ostrapark/static/css/2.1fd2b905.chunk.css.map",
+    "static/css/main.724d9324.chunk.css.map": "/ostrapark/static/css/main.724d9324.chunk.css.map",
+    "static/media/App.scss": "/ostrapark/static/media/lato-v16-latin-regular.d1d5e30a.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8ef0b7e4.js",
+    "static/css/2.1fd2b905.chunk.css",
+    "static/js/2.1da970ba.chunk.js",
+    "static/css/main.724d9324.chunk.css",
+    "static/js/main.324388fd.chunk.js"
+  ]
+}
