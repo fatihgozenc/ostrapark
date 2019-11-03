@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { HomeContext } from '../context/HomeContext';
 import { NavLink } from 'react-router-dom';
-import {animated, useSpring } from 'react-spring';
+import { animated, useSpring } from 'react-spring';
 
 const Header = () => {
 	const [data] = React.useContext(HomeContext);
@@ -11,7 +11,7 @@ const Header = () => {
 	const menuToggler = React.createRef();
 
 	const toggleAnim = (e) => {
-		if(window.innerWidth < 600) {
+		if (window.innerWidth < 600) {
 			setToggle(!toggle)
 			menuToggler.current.classList.toggle('change');
 			header.current.classList.toggle('navopen');
@@ -24,7 +24,6 @@ const Header = () => {
 				}, 500);
 			} else {
 				group.classList.add('d-block');
-				
 				setTimeout(() => {
 					group.classList.add('moveUp');
 					group.classList.add('d-show')
@@ -35,7 +34,7 @@ const Header = () => {
 
 	const toggleAnimScroll = (e) => {
 		window.scrollTo(0, 0);
-		if(window.innerWidth < 600) {
+		if (window.innerWidth < 600) {
 			setToggle(!toggle)
 			menuToggler.current.classList.toggle('change');
 			header.current.classList.toggle('navopen');
@@ -48,7 +47,7 @@ const Header = () => {
 				}, 500);
 			} else {
 				group.classList.add('d-block');
-				
+
 				setTimeout(() => {
 					group.classList.add('moveUp');
 					group.classList.add('d-show')
@@ -58,36 +57,35 @@ const Header = () => {
 	}
 
 	const opening = useSpring({
-		from: {opacity: 0}, to: {opacity: 1}
-		
-	})
-	
+		from: { opacity: 0 }, to: { opacity: 1 }
+	});
+
 	return (
 		<animated.div style={opening}>
 
-		<header ref={header}>
-			<nav className="navbar">
-				<NavLink className="navbar-item" to={'/'} onClick={toggle ? toggleAnimScroll : null} >
-					 <img src={data.posts['logo_weiss']} alt={data.posts['address_title'] + ' Logo'} id="logo" />
-				</NavLink>
-				<div ref={navbarGroup} className="navbar-item-group moveUpItem" >
-					<NavLink className="navbar-item" to={'/locations'} onClick={toggleAnimScroll}>
-						Locations
+			<header ref={header}>
+				<nav className="navbar">
+					<NavLink className="navbar-item" to={'/'} onClick={toggle ? toggleAnimScroll : window.scrollTo(0, 0)} >
+						<img src={data.posts['logo_weiss']} alt={data.posts['address_title'] + ' Logo'} id="logo" />
 					</NavLink>
-					<NavLink className="navbar-item" to={'/referenzen'} onClick={toggleAnimScroll}>
-						Referenzen
+					<div ref={navbarGroup} className="navbar-item-group moveUpItem" >
+						<NavLink className="navbar-item" to={'/locations'} onClick={toggleAnimScroll}>
+							Locations
 					</NavLink>
-					<NavLink className="navbar-item" to={'/kontakt'} onClick={toggleAnimScroll}>
-						Kontakt
+						<NavLink className="navbar-item" to={'/referenzen'} onClick={toggleAnimScroll}>
+							Referenzen
 					</NavLink>
-				</div>
-				<div className="navbar-item navbar-toggler" ref={menuToggler} onClick={toggleAnim}>
-					<div className="bar1"></div>
-					<div className="bar2"></div>
-					<div className="bar3"></div>
-				</div>
-			</nav>
-		</header>
+						<NavLink className="navbar-item" to={'/kontakt'} onClick={toggleAnimScroll}>
+							Kontakt
+					</NavLink>
+					</div>
+					<div className="navbar-item navbar-toggler" ref={menuToggler} onClick={toggleAnim}>
+						<div className="bar1"></div>
+						<div className="bar2"></div>
+						<div className="bar3"></div>
+					</div>
+				</nav>
+			</header>
 		</animated.div>
 
 	)
