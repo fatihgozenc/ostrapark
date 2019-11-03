@@ -1,0 +1,19 @@
+.imgslider-nav-group {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+
+	button {
+		vertical-align: bottom;
+		height: 5rem;
+		outline: none;
+		width: 5rem;
+		background: #000;
+		border: 0;
+		align-self: end;
+		color: #fff;
+		margin: 0;
+		padding: 0;
+		font-size: 1.4rem;
+	}
+}

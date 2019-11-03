@@ -20,7 +20,7 @@ const Footer = () => {
 					<div className="newsletter-wrapper">
 						<div className="newsletter-img" style={{ backgroundImage: `url(${data.posts.newsletter_bild})` }} />
 						<div className="newsletter-text">{data.posts.newsletter_text}
-							<a href="#">NEWSLETTER ABONNIEREN &rarr;</a>
+							<a href="/newsletter">NEWSLETTER ABONNIEREN &rarr;</a>
 						</div>
 					</div>
 				</div>

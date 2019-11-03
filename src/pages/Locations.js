@@ -30,7 +30,7 @@ const Locations = (props) => {
 							</PageRouter>
 						))}
 					</div>
-					<a className="scroll-to-see" onClick={scrollToSpecs}
+					<a className="scroll-to-see" onClick={scrollToSpecs} href="#spezifikationen"
 					>&darr; Bitte Clicken oder Scrollen Sie für Spezifikationen &darr;</a>
 				</section>
 
