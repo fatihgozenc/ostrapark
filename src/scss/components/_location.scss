@@ -15,13 +15,25 @@
 			padding: 1% 0;
 		}
 	}
+
+	@include lg {
+		display: flex;
+		
+		.location-overview {
+			flex: 1 0 45%;
+		}
+
+		.location-detail {
+			padding-left: 2rem;
+		}
+	}
 }
 
 .location-gallery {
 	position: relative;
 
 	.location-gallery-item {
-		height: 30rem;	
+		height: 100%;	
 		width: 100%;
 		background-repeat: no-repeat;
 		background-size: cover;

@@ -1,7 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import { withRouter } from "react-router";
-import { Loading } from '../components/Loading';
 
 //FOR CACHING
 import LRU from 'lru-cache';
@@ -13,25 +11,25 @@ const referenzenEndPoint = `http://ostrapark.narciss-taurus.de/wordpress/wp-json
 const initialState = {
 	loading: true,
 	error: '',
-	cache: [() => {}, ''],
+	cache: [() => { }, ''],
 	posts: []
 };
 
-function apiCache(res, req ){
+function apiCache(res, req) {
 	const cache = new LRU(200);
 	const key = `${md5(JSON.stringify(req))}`;
-	const value = cache.get(key) || {status: 'new', data: null};
-	
+	const value = cache.get(key) || { status: 'new', data: null };
+
 	value.data = res;
 	cache.set(key, produce(value, draft => {
 		draft.status = 'resolved';
 		draft.data = res;
 	}));
-	console.log(value)
+	// console.log(value)
 }
 
 const reducer = (currentState, action) => {
-	switch(action.type){
+	switch (action.type) {
 		case 'FETCH_SUCCESS':
 			return {
 				loading: false,
@@ -45,7 +43,7 @@ const reducer = (currentState, action) => {
 			return {
 				loading: false,
 				posts: [],
-				cache: [() => {}, 'No cache cuz there\'s no data'],
+				cache: [() => { }, 'No cache cuz there\'s no data'],
 				error: 'Something went wrong with fetching!'
 			}
 		default:
@@ -64,10 +62,10 @@ export const ReferenzenProvider = (props) => {
 
 		axios.get(referenzenEndPoint, { cancelToken: source.token })
 			.then(response => {
-				dispatch({type: 'FETCH_SUCCESS', payload: response.data})
+				dispatch({ type: 'FETCH_SUCCESS', payload: response.data })
 			})
 			.catch(error => {
-				dispatch({type: 'FETCH_ERROR'})
+				dispatch({ type: 'FETCH_ERROR' })
 			})
 
 		return () => {
@@ -75,13 +73,10 @@ export const ReferenzenProvider = (props) => {
 		}
 	}, []);
 
-	return(
+	return (
 		<ReferenzenContext.Provider value={[state, dispatch]} >
-			{props.children }
+			{state.loading ? ' ' : props.children}
 		</ReferenzenContext.Provider>
 	)
 
 };
-
-
-const ReferenzenProviderWithRouter = withRouter(ReferenzenContext);

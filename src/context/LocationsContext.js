@@ -11,25 +11,25 @@ const locationsEndPoint = `http://ostrapark.narciss-taurus.de/wordpress/wp-json/
 const initialState = {
 	loading: true,
 	error: '',
-	cache: [() => {}, ''],
+	cache: [() => { }, ''],
 	posts: []
 };
 
-function apiCache(res, req ){
+function apiCache(res, req) {
 	const cache = new LRU(200);
 	const key = `${md5(JSON.stringify(req))}`;
-	const value = cache.get(key) || {status: 'new', data: null};
-	
+	const value = cache.get(key) || { status: 'new', data: null };
+
 	value.data = res;
 	cache.set(key, produce(value, draft => {
 		draft.status = 'resolved';
 		draft.data = res;
 	}));
-	console.log(value)
+	// console.log(value)
 }
 
 const reducer = (currentState, action) => {
-	switch(action.type){
+	switch (action.type) {
 		case 'FETCH_SUCCESS':
 			return {
 				loading: false,
@@ -43,7 +43,7 @@ const reducer = (currentState, action) => {
 			return {
 				loading: false,
 				posts: [],
-				cache: [() => {}, 'No cache cuz there\'s no data'],
+				cache: [() => { }, 'No cache cuz there\'s no data'],
 				error: 'Something went wrong with fetching!'
 			}
 		default:
@@ -62,10 +62,10 @@ export const LocationsProvider = (props) => {
 
 		axios.get(locationsEndPoint, { cancelToken: source.token })
 			.then(response => {
-				dispatch({type: 'FETCH_SUCCESS', payload: response.data})
+				dispatch({ type: 'FETCH_SUCCESS', payload: response.data })
 			})
 			.catch(error => {
-				dispatch({type: 'FETCH_ERROR'})
+				dispatch({ type: 'FETCH_ERROR' })
 			})
 
 		return () => {
@@ -73,9 +73,9 @@ export const LocationsProvider = (props) => {
 		}
 	}, []);
 
-	return(
+	return (
 		<LocationsContext.Provider value={[state, dispatch]} >
-			{state.loading ? ' ' : props.children }
+			{state.loading ? ' ' : props.children}
 		</LocationsContext.Provider>
 	)
 

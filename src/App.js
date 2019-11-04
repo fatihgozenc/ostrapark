@@ -7,6 +7,7 @@ import { useTransition, animated, useSpring } from 'react-spring';
 // import NotFound from './pages/NotFound';
 import { HomeProvider } from './context/HomeContext';
 import { LocationsProvider } from './context/LocationsContext';
+import { ReferenzenProvider } from './context/ReferenzenContext';
 
 import Header from './components/Header.js';
 import Footer from './components/Footer.js';
@@ -25,15 +26,15 @@ import './App.scss';
 const App = () => {
 	const { location } = React.useContext(__RouterContext);
 	const transitions = useTransition(location, location => location.pathname, {
-		from:   { opacity: 0},
-		enter:  { opacity: 1},
-		leave:  { position: 'absolute', opacity: 0}
+		from: { opacity: 0 },
+		enter: { opacity: 1 },
+		leave: { position: 'absolute', opacity: 0 }
 		// config: { delay: 1000, duration: 1000}
 	});
 
 	const opening = useSpring({
-		from: {opacity: 0}, to: {opacity: 1}, config: { delay: 1000, duration: 1000}
-		
+		from: { opacity: 0 }, to: { opacity: 1 }, config: { delay: 1000, duration: 1000 }
+
 	})
 
 	return (
@@ -41,24 +42,24 @@ const App = () => {
 			<Header />
 			<animated.div style={opening}>
 				<main className="app" >
-						<LocationsProvider>
+					<LocationsProvider><ReferenzenProvider>
 						{transitions.map(({ item, props, key }) => (
 							<animated.div key={key} style={props}>
 								<Switch location={item}>
-									<Route exact path="/" component={ Home } />
-									<Route exact path="/locations" component={ Locations } />
-									<Route path="/locations/:slug" component={ Location } />
-									<Route exact path="/referenzen" component={ Referenzen } />
-									<Route path="/referenzen/:slug" component={ Referenz } />
-									<Route exact path="/kontakt" component={ Kontakt } />
-									<Route exact path="/impressum" component={ Impressum } />
-									<Route exact path="/datenschutz" component={ Datenschutz } />
+									<Route exact path="/" component={Home} />
+									<Route exact path="/locations" component={Locations} />
+									<Route path="/locations/:slug" component={Location} />
+									<Route exact path="/referenzen" component={Referenzen} />
+									<Route path="/referenzen/:slug" component={Referenz} />
+									<Route exact path="/kontakt" component={Kontakt} />
+									<Route exact path="/impressum" component={Impressum} />
+									<Route exact path="/datenschutz" component={Datenschutz} />
 								</Switch>
 							</animated.div>
 						))}
-						</LocationsProvider>
-					</main>
-					</animated.div>
+					</ReferenzenProvider></LocationsProvider>
+				</main>
+			</animated.div>
 			<Footer />
 		</HomeProvider>
 	);

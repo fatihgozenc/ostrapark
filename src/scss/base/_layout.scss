@@ -21,19 +21,22 @@ body {
 	color: $darkGray;
 }
 
-body::-webkit-scrollbar {
-	position: absolute;
-	width: .5vw;
-	background-color: #000;
-}
- 
-body::-webkit-scrollbar-track {
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-}
- 
-body::-webkit-scrollbar-thumb {
-	border-radius: .5rem;
-	background: linear-gradient(to top, #000, $darkGray);
+@include lg {
+	body::-webkit-scrollbar {
+		position: absolute;
+		width: .5vw;
+		background-color: #000;
+	}
+
+	body::-webkit-scrollbar-track {
+		-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	}
+
+	body::-webkit-scrollbar-thumb {
+		border-radius: .5rem;
+		background: linear-gradient(to top, #000, $darkGray);
+	}
+
 }
 
 .loading {
@@ -52,5 +55,13 @@ body::-webkit-scrollbar-thumb {
 		align-self: center;
 		text-transform: uppercase;
 		font-size: 1.4rem;
+	}
+}
+
+#app {
+	overflow-x: hidden;
+
+	@include lg {
+		overflow-x: auto;
 	}
 }

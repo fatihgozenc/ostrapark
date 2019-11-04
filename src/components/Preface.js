@@ -2,7 +2,7 @@ import React from 'react';
 import { HomeContext } from '../context/HomeContext';
 
 const Preface = () => {
-	const [data, setData] = React.useContext(HomeContext);
+	const [data] = React.useContext(HomeContext);
 
 	return (
 		<section className="preface">

@@ -11,7 +11,7 @@ const Header = () => {
 	const menuToggler = React.createRef();
 
 	const toggleAnim = (e) => {
-		if (window.innerWidth < 600) {
+		if (window.innerWidth < 768) {
 			setToggle(!toggle)
 			menuToggler.current.classList.toggle('change');
 			header.current.classList.toggle('navopen');
@@ -34,7 +34,7 @@ const Header = () => {
 
 	const toggleAnimScroll = (e) => {
 		window.scrollTo(0, 0);
-		if (window.innerWidth < 600) {
+		if (window.innerWidth < 768) {
 			setToggle(!toggle)
 			menuToggler.current.classList.toggle('change');
 			header.current.classList.toggle('navopen');
@@ -57,9 +57,9 @@ const Header = () => {
 	}
 
 	const opening = useSpring({
-		from: {opacity: 0}, to: {opacity: 1}
+		from: { opacity: 0 }, to: { opacity: 1 }
 	});
-	
+
 	return (
 		<animated.div style={opening}>
 

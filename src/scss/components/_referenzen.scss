@@ -1,0 +1,46 @@
+.referenzen-list {
+	padding: 10%;
+
+	@include md{
+		padding: 5% 0;
+	}
+
+	.referenzen_list_item{
+		margin-bottom: 5rem;
+
+		@include md {
+			margin-bottom: 20rem;
+		}
+
+		.referenzen_list_item-img{
+			height: 15rem;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+
+			@include md {
+				height: 32rem;
+				flex: 1 0 50%;
+			}
+		}
+
+		.referenzen_list_item-text {
+			h2{
+				font-size: 2rem;
+			}
+			font-size: 1.4rem;
+
+			@include md {
+				padding: 0 5% ;
+			}
+		}
+
+		@include md {
+			display: flex;
+			align-items: center;
+			// .break {
+			// 	width: 20rem;
+			// }
+		}
+	}
+}

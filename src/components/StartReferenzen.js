@@ -4,7 +4,7 @@ import { HomeContext } from '../context/HomeContext';
 import { CarouselProvider, Slider, Slide, DotGroup } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import { respImg } from '../helpers/respImg';
-import { respFunction } from '../helpers/respFunction';
+import respFunction from '../helpers/respFunction';
 
 
 const StartReferenzen = () => {
@@ -14,14 +14,14 @@ const StartReferenzen = () => {
 		<section className="start-referenzen">
 			<h2 className="section-title">REFERENZEN<span>REFERENZEN</span></h2>
 			<CarouselProvider
-				naturalSlideWidth={respFunction(100, 100, 320)}
-				naturalSlideHeight={respFunction(150, 100, 100)}
+				naturalSlideWidth={respFunction(100, 300, 320)}
+				naturalSlideHeight={respFunction(150, 200, 100)}
 				totalSlides={6}
 				isPlaying={true}
 				interval={6000}
-				touchEnabled={respImg(true, false)}
-				dragEnabled={respImg(true, false)}
-				infinite={respImg(true, false)}>
+				touchEnabled={respFunction(true, true, false)}
+				dragEnabled={respFunction(true, true, false)}
+				infinite={respFunction(true, true, false)}>
 				<Slider className="start-referenzen-slider">
 					{data.posts['referenzen'].map(item => (
 						<Slide key={item.id} index={item.id}>

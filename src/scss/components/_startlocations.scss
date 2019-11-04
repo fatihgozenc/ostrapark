@@ -25,7 +25,7 @@
 				font-size: 17rem;
 			} 
 		}
-		@include respond-to('large'){
+		@include lg{
 			width: 100%;
 			text-align: left;
 			font-size: 3.3rem;
@@ -36,7 +36,7 @@
 
 	.start-locations-wrapper {
 
-		@include respond-to('large') {
+		@include md {
 			display: flex;
 			width: 100%;
 			a {

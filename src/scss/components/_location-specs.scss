@@ -1,0 +1,44 @@
+.location-specs-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	
+
+	.location-spec-item {
+		flex: 1 0 50%;
+
+		@include md {
+			flex: 1 0 25%;
+			font-size: .8em;
+		}
+
+		.title {
+			padding-bottom: 1rem;
+			margin: 3rem 1rem 1rem 1rem;
+			border-bottom: 1px solid $midGray;
+		}
+		.value {
+			font-weight: 900;
+		}
+	}
+	
+}
+
+.download-factsheet{
+	margin: 2rem 0;
+	position: relative;
+    width: 100%;
+    height: 8rem;
+    background: transparent;
+	border: none;
+	letter-spacing: 3px;
+	color: $darkGray;
+	
+	.icon {
+		height: 70px;
+		position: absolute;
+		top: 48%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}

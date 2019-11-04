@@ -1,5 +1,5 @@
-export const respFunction = (mobileValue, tabletValue, desktopValue) => {
-	if ( window.innerWidth < 768) {
+const respFunction = (mobileValue, tabletValue, desktopValue) => {
+	if (window.innerWidth < 768) {
 		return mobileValue
 	} else if (window.innerWidth > 767 && window.innerWidth < 1025) {
 		return tabletValue;
@@ -7,3 +7,5 @@ export const respFunction = (mobileValue, tabletValue, desktopValue) => {
 		return desktopValue;
 	}
 }
+
+export default respFunction;

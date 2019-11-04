@@ -24,7 +24,7 @@ const Locations = (props) => {
 							<PageRouter key={item.id} route={`/locations/${item.slug}`}>
 								<div className="start-locations-item" style={{ backgroundImage: `url(${respImg(item.image.medium, item.image.full)})` }}>
 									<div className="start-slider-text">
-										<span> {item.title}</span>
+										<span> {(item.title).split(" ").join("\n\n")}</span>
 									</div>
 								</div>
 							</PageRouter>
