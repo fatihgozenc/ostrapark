@@ -1,6 +1,7 @@
 .hero {
 	height: 50vh;
 	width: 100%;
+	background-color: #000;
 	@include md {
 		width: 100vw;
 	}
@@ -46,8 +47,59 @@
 		text-transform: uppercase;
 		z-index: 1;
 
+		@include md {
+			padding: 5% 5% 0 5%;
+			font-size: 5rem;
+			line-height: .9;
+			font-weight: 300;
+		}
+
 		@include lg {
+			
 			margin: 0;
+			font-size: 8rem;
+		}
+
+		@include xl {
+			font-weight: 100;
+			font-size: 9rem;
+		}
+	}
+}
+
+.hero-large {
+	@include xl {
+		height: 85vh;
+
+		&::before{
+			height: 90%;
+		}
+	}
+
+}
+
+.hero-button {
+	display: none;
+	@include xl {
+		display: block;
+		letter-spacing: 2px;
+		height: 15vh;
+		border: none;
+		background: #000;
+		width: 100%;
+		color: $lightGray;
+		text-align: left;
+		padding-left: 5%;
+	}
+	
+}
+
+.hero-locations {
+	@include xl {
+		height: 72vh;
+
+		h1 {
+			margin: 3% 0;
 		}
 	}
 }

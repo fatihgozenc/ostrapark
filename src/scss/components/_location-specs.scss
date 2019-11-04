@@ -2,7 +2,6 @@
 	display: flex;
 	flex-wrap: wrap;
 	text-align: center;
-	
 
 	.location-spec-item {
 		flex: 1 0 50%;
@@ -16,6 +15,7 @@
 			padding-bottom: 1rem;
 			margin: 3rem 1rem 1rem 1rem;
 			border-bottom: 1px solid $midGray;
+			letter-spacing: 1.5px;
 		}
 		.value {
 			font-weight: 900;

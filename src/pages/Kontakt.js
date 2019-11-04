@@ -21,9 +21,9 @@ const Kontakt = (props) => {
 				imgSmall={item.image.large}
 				imgMedium={item.image.large}
 				imgFull={item.image.full}
+				type="locations"
 			/>
 			<section className="layout page-kontakt">
-				<h2>Anfrage Senden</h2>
 				{/* "handleSubmit" will validate your inputs before invoking "onSubmit" */}
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<div className="form-block">
@@ -67,20 +67,22 @@ const Kontakt = (props) => {
 					</div>
 					<div className="form-block">
 						<label htmlFor="vorname">Vorname:*</label>
-						<input name="vorname" defaultValue="test" ref={register({ required: true })} />
+						<input name="vorname" ref={register({ required: true })} />
 					</div>
 					<div className="form-block">
 						<label htmlFor="nachname">Nachname:*</label>
 						<input name="nachname" ref={register({ required: true })} />
 					</div>
 
-					<p>Wir freuen uns, wenn Sie schon Angaben zu folgenden Anhaltspunkten machen können: </p>
-					<ul className="list">
-						<li>Catering (eigener Caterer oder über die Golden Door)</li>
-						<li>Mobiliar / Bestuhlung</li>
-						<li>Technik</li>
-						<li>Deko</li>
-					</ul>
+					<div className="form-block">
+						<p>Wir freuen uns, wenn Sie schon Angaben zu folgenden Anhaltspunkten machen können: </p>
+						<ul className="list">
+							<li>Catering (eigener Caterer oder über die Golden Door)</li>
+							<li>Mobiliar / Bestuhlung</li>
+							<li>Technik</li>
+							<li>Deko</li>
+						</ul>
+					</div>
 
 					<div className="form-block">
 						<textarea className="form-area" name="angaben" rows="10" maxLength="6000" ref={register({ required: true })}></textarea>

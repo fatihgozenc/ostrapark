@@ -15,7 +15,7 @@
 			text-align: left;
 			padding-left: 5%;
 			font-size: 3.3rem;
-			font-weight: 700;
+			font-weight: 500;
 		}
 
 		span {
@@ -35,10 +35,7 @@
 				top: -250%;
 				font-size: 17rem;
 			} 
-			
 		}
-		
-		
 	}
 
 
@@ -89,12 +86,25 @@
 					position: absolute;
 					bottom: -2.3rem;
 				}
+
+				
 			}
 
 			p {
 				font-size: 1.4rem;
 				@include md{
 					padding: 2% 5% 2% 0;
+				}
+
+				@include lg {
+					font-size: 1rem;
+					text-transform: uppercase;
+					letter-spacing: 1.5px;
+					line-height: 1.7;
+				}
+
+				@include xl {
+					width: 80%;
 				}
 			}
 
@@ -112,7 +122,6 @@
 		}
 	}
 
-
 	.referenzen-nav-group {
 		@include md {
 			display: flex;
@@ -121,10 +130,7 @@
 				width: 50%;
 			}
 		}
-	
-		
 	}
-
 
 	.start-referenzen-nav {
 		position: absolute;
@@ -141,15 +147,14 @@
 			position: relative;
 		}
 
-
-		
-
 		button {
-			height: 1.7rem;
-			width: 1.7rem;
+			height: 1.5rem;
+			width: 1.5rem;
 			border: none;
 			background: $darkGray;
-			border-radius: 1.7rem;
+			border-radius: 1.5rem;
+			transform: scale(.3);
+			transition: .5s all;
 
 			@include md {
 				margin-right: 2rem;
@@ -161,7 +166,9 @@
 		}
 	
 		.carousel__dot--selected {
-				background: #fff;
+				background: $midGray;
+				transform: scale(1);
+				transition: .5s all;
 		}
 	}
 }

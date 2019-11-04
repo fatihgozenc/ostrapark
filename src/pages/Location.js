@@ -18,6 +18,7 @@ const Location = (props) => {
 				imgSmall={item.image.medium}
 				imgMedium={item.image.large}
 				imgFull={item.image.full}
+				type="large"
 			/>
 
 			<section className="location">
@@ -51,7 +52,7 @@ const Location = (props) => {
 								})}
 							</Slider>
 							<div className="imgslider-nav-group">
-								<ButtonBack>&#9668;</ButtonBack><ButtonNext>&#9658;</ButtonNext>
+								<ButtonBack>&larr;</ButtonBack><ButtonNext>&rarr;</ButtonNext>
 							</div>
 						</CarouselProvider>
 					</div>

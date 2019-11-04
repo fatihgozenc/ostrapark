@@ -2,7 +2,7 @@
 	height: 100vh;
 	position: relative;
 
-	@include respond-to('large') {
+	@include lg {
 		overflow: hidden;
 	}
 
@@ -11,6 +11,11 @@
 		font-weight: 300;
 		letter-spacing: 1.5px;
 		font-size: .8em;
+
+		@include lg {
+			font-weight: 700;
+			font-size: .6em;
+		}
 	}
 
 	.start-slider {
@@ -25,6 +30,12 @@
 				font-weight: 300;
 				letter-spacing: 2px;
 				font-size: 2.8rem;
+
+				@include lg {
+					letter-spacing: 4px;
+					font-size: 5rem;
+					margin-bottom: 1rem;
+				}
 			}
 
 			&:before {
@@ -45,14 +56,17 @@
 				text-align: center;
 				font-size: 1.6rem;
 
-				@include respond-to('large') {
+				@include lg {
 					text-align: left;
 					width: 70%;
 					bottom: 10%;
-				}
 
-				@include respond-to('xlarge') {
-					width: 50%;
+					p {
+						font-size: 1rem;
+						text-transform: uppercase;
+						letter-spacing: 2px;
+						line-height: 2;
+					}
 				}
 			}
 		}
@@ -68,21 +82,25 @@
 	display: flex;
 	justify-content: space-evenly;
 
-	@include respond-to('large') {
+	@include lg {
 		left: 5%;
 		width: initial;
 		justify-content: initial;
 	}
 
 	button {
-		height: 1.7rem;
-		width: 1.7rem;
+		height: 1.5rem;
+		width: 1.5rem;
 		border: none;
 		background: $darkGray;
 		border-radius: 1.7rem;
+		transform: scale(.3);
+		transition: .5s all;
 
-		@include respond-to('large') {
+		@include lg {
 			margin-right: 2rem;
+			height: 1.2rem;
+			width: 1.2rem;
 		}
 
 		&:focus, &:active {
@@ -92,6 +110,8 @@
 
 	.carousel__dot--selected {
 			background: $lightGray;
+			transform: scale(1);
+			transition: .5s all;
 	}
 }
 

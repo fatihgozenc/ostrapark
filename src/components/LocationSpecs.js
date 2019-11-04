@@ -1,5 +1,4 @@
 import React from 'react';
-// import DatenblattDownload from '../assets/icons/DatenblattDownload'
 import IconDownload from '../assets/icons/icon-download.svg'
 
 const LocationSpecs = ({item}) => {

@@ -61,7 +61,7 @@ body {
 #app {
 	overflow-x: hidden;
 
-	@include lg {
+	@include xl {
 		overflow-x: auto;
 	}
 }

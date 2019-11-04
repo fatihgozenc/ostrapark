@@ -28,12 +28,19 @@ const Referenz = (props) => {
 
 	const selectedPostKey = matchedValue(idValues);
 
+	const paragraphs = item.content.split("\n\r");
+	const sentences = paragraphs[0].split('. ');
+	const getHalf = Math.ceil(sentences.length / 2) 
+	const firstHalfOfParagraph = sentences.slice(0, getHalf);
+	const lastHalfOfParagraph = sentences.slice(getHalf, sentences.length);
+
 	return (
 		<>
 			<Hero title={item.title}
 				imgSmall={item.image.medium}
 				imgMedium={item.image.medium}
 				imgFull={item.image.full}
+				type="large"
 			/>
 			<section className="referenz">
 
@@ -55,12 +62,17 @@ const Referenz = (props) => {
 							))}
 						</Slider>
 						<div className="imgslider-nav-group">
-							<ButtonBack>&#9668;</ButtonBack><ButtonNext>&#9658;</ButtonNext>
+							<ButtonBack>&larr;</ButtonBack><ButtonNext>&rarr;</ButtonNext>
 						</div>
 					</CarouselProvider>
 				</div>
 				<div className="referenz-text">
-					{item.content}
+					{console.log(firstHalfOfParagraph, lastHalfOfParagraph)}
+
+					{paragraphs[1] === undefined 
+						? <><p>{firstHalfOfParagraph}</p><div className="break"/><p>{lastHalfOfParagraph}</p></>
+						: <><p>{paragraphs[0]}</p><div className="break"/><p>{paragraphs[1].replace('\n', '')}<br/>{paragraphs[2]}</p></>}
+
 				</div>
 			</section>
 

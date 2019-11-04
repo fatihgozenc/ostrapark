@@ -32,7 +32,18 @@
 
 			@include md {
 				padding: 0 5% ;
+				font-size: 1rem;
+				text-transform: uppercase;
+				letter-spacing: 1.5px;
+				line-height: 1.7;
 			}
+
+			a {
+				font-weight: 900;
+				font-size: 1.1rem;
+				letter-spacing: 2px;
+			}
+			
 		}
 
 		@include md {

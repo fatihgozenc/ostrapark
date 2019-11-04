@@ -5,6 +5,12 @@
 	@include md {
 		padding: 5% 10%;
 	}
+	.kontakt {
+		@include lg {
+			padding: 5% 0%;
+		}
+	}
+	
 
 	p{
 		white-space: pre-wrap;
@@ -14,6 +20,7 @@
 		@include md {
 			display:flex;
 			flex-wrap: wrap;
+			
 
 			.form-block {
 				flex: 1 0 48%;
@@ -23,13 +30,32 @@
 				margin-right: 2%;
 			}
 
-			.form-check-group {
-				display: flex;
+			.form-block:nth-child(8){
+				flex: 1 0 100%;
+			
+			}
 
-				.form-check {
-					padding-right: 1.6rem;
+			.form-block:nth-child(4){
+				flex: 1 0 100%;
+
+				@include lg {
+					flex: 1 0 48%;
 				}
 			}
+
+			.form-check-group {
+				display: flex;
+				justify-content: space-between;
+
+				.form-check {
+					padding-right: .5rem;
+					font-size: 1.2rem;
+				}
+			}
+		}
+
+		@include lg {
+			padding: 0 11vw;
 		}
 	}
 
@@ -39,6 +65,7 @@
 			position: relative;
 			border-radius: 1rem;
 			width: 100%;
+			font-size: 1.2rem;
 			height: 8rem;
 			text-transform: uppercase;
 			background: transparent;
@@ -67,6 +94,7 @@
 			border: none;
 			padding-left: 5%;
 			background-color: #fff;
+			font-size: 1.2rem;
 		}
 		input{
 			width: 95%;
@@ -75,12 +103,14 @@
 			border: none;
 			padding-left: 5%;
 			background-color: #fff;
+			font-size: 1.2rem;
 		}
 		textarea{
 			width: 95%;
 			border: none;
 			padding-left: 5%;
 			background-color: #fff;
+			font-size: 1.2rem;
 		}
 	}
 
@@ -97,4 +127,11 @@
 		width: auto !important;
 		
 	}
+
+	.form-block-checkbox {
+		@include md {
+			font-size: .9em;
+		}
+	}
+	
 }

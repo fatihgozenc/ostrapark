@@ -1,6 +1,16 @@
 .location {
 	padding: 5%;
-	font-size: 1.3rem;
+	font-size: 1.6rem;
+	line-height: 1.6;
+
+	@include md{
+		font-size: 1.2rem;
+	}
+	
+	@include xl{
+		font-size: 1.6rem;
+		padding: 10% 11vw 5% 11vw;
+	}
 
 	img {
 		height: 7rem;
@@ -13,17 +23,27 @@
 
 		li {
 			padding: 1% 0;
+			font-weight: 700;
+
+			@include md {
+				text-transform: uppercase;
+				font-size: 1rem;
+				padding: 2% 0;
+				letter-spacing: 1.5px;
+			}
 		}
 	}
 
 	@include lg {
 		display: flex;
+		font-size: 1.2rem;
 		
 		.location-overview {
 			flex: 1 0 45%;
 		}
 
 		.location-detail {
+			flex: 1 0 45%;
 			padding-left: 2rem;
 		}
 	}

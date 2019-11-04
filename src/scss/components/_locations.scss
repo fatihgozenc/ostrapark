@@ -1,5 +1,8 @@
 .locations-props {
-	display: flex;
+	display: none;
+	@include md {
+		display: flex;
+	}
 	height: 50vh;
 	align-items: center;
 	margin-bottom: 10vh;
@@ -25,18 +28,60 @@
 
 		span {
 			padding: 11%;
-			font-size: 1.4rem;
+			font-size: 1.1rem;
+			text-transform: uppercase;
+			letter-spacing: 1.6px;
 		}
 		
 	}
 }
 
+.location-content {
+	width: 100vw;
+
+	@include lg {
+		width: auto;
+	}
+}
+
 .scroll-to-see {
+	display: none;
+
+	@include md {
+		display: block;
+	}
 	text-align: center;
-	display: block;
-	padding: 6% 0;
+	height: 100%;
+    width: 100%;
+    border: 0;
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	color: $darkGray;
+	background: #000;
+	color: $lightGray;
 	cursor: pointer;
+
+	span {
+		display: block;
+		animation: arrowDownAnim 1.6s infinite linear;
+	}
+
+	&:hover > span {
+		animation: none;
+	}
+}
+
+@keyframes arrowDownAnim {
+	0% {
+		opacity: 0;
+		transform: scaleY(0) translateY(0%);
+	}
+
+	50% {
+		opacity: 1;
+		transform: scaleY(1.5) translateY(50%);
+	}
+	100% {
+		opacity: 0;
+		transform: scaleY(3) translateY(100%);
+	}
 }

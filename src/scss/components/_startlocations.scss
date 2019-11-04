@@ -2,19 +2,23 @@
 	padding: 5%;
 	color: #fff;
 
-	@include lg {
-		padding: 5% 0 0 16%;
+	@include md {
+		padding: 0;
+	}
+
+	@include xl {
+		padding: 1% 0 0 16%;
 	}
 
 	.section-title {
 		position: relative;
 		span {
 			display: none;
-			@include respond-to('large'){
+			@include lg{
 				display: block;
 				position: absolute;
 				opacity: .1;
-				font-weight: 300;
+				font-weight: 100;
 				top: -130%;
 				font-size: 12rem;
 				right: 0;
@@ -29,7 +33,7 @@
 			width: 100%;
 			text-align: left;
 			font-size: 3.3rem;
-			font-weight: 700;
+			font-weight: 500;
 		}
 	
 	}
@@ -39,11 +43,18 @@
 		@include md {
 			display: flex;
 			width: 100%;
+			
 			a {
 				width: 25%;
 			}
+			
+			.link-router {
+				border-bottom: 2rem solid #000;
+			}
 		}
 	}
+
+	
 
 	.start-locations-item {
 		background-color: #000;
@@ -55,11 +66,8 @@
 		background-size: cover;
 		position: relative;
 		transition: .5s all;
-		
-		@include respond-to('small') {
-		}
 
-		@include respond-to('large') {
+		@include lg{
 			background-size: 100% 100%;
 		}
 
@@ -94,4 +102,26 @@
 	}
 
 	
+}
+
+.locations-page {
+	@include xl {
+		padding: 0 0 7% 0;
+	}
+
+	.start-locations-wrapper {
+		@include md {
+			a {
+				width: 21%;
+			}
+	
+			.break {
+				width: 16%;
+			}
+
+			.link-router {
+				border-bottom: 4rem solid #000;
+			}
+		}
+	}
 }

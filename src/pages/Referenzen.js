@@ -2,6 +2,7 @@ import React from 'react';
 import { ReferenzenContext } from '../context/ReferenzenContext';
 import PageRouter from '../components/PageRouter';
 import respFunction from '../helpers/respFunction';
+import Hero from '../components/Hero'
 
 
 const Referenzen = (props) => {
@@ -9,15 +10,12 @@ const Referenzen = (props) => {
 
 	return (
 		<>
-			<section className="hero" style={{
-				backgroundImage: `url(${respFunction(
-					data.posts[3].image.medium,
-					data.posts[3].image.medium,
-					data.posts[3].image.full
-				)})`
-			}}>
-				<h1>{(props.match.path).replace('/', '')}</h1>
-			</section>
+			<Hero title={(props.match.path).replace('/', '')}
+				imgSmall={data.posts[3].image.large}
+				imgMedium={data.posts[3].image.large}
+				imgFull={data.posts[3].image.full}
+				type="large"
+			/>
 
 			<section className="referenzen-list">
 				{data.posts.map((item, key) => (
