@@ -34,9 +34,9 @@ const Kontakt = (props) => {
 				{/* "handleSubmit" will validate your inputs before invoking "onSubmit" */}
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<div className="form-block">
-						<label htmlFor="location">Location*:</label>
+						<label htmlFor="location">Location auswählen*:</label>
 						<select name="span.wpcf7-form-control-wrap.location" ref={register({ required: true })}>
-							<option value="">- Location auswählen -</option>
+							<option value=""></option>
 							<option value="Ostra-Areal Dresden">Ostra-Areal Dresden</option>
 							<option value="Erlwein Capitol">Erlwein Capitol</option>
 							<option value="Erlwein Forum">Erlwein Forum</option>
@@ -73,16 +73,16 @@ const Kontakt = (props) => {
 						</div>
 					</div>
 					<div className="form-block">
-						<label htmlFor="vorname">Vorname:*</label>
+						<label htmlFor="vorname">Vorname*</label>
 						<input name="vorname" ref={register({ required: true })} />
 					</div>
 					<div className="form-block">
-						<label htmlFor="nachname">Nachname:*</label>
+						<label htmlFor="nachname">Nachname*</label>
 						<input name="nachname" ref={register({ required: true })} />
 					</div>
 
 					<div className="form-block">
-						<label htmlFor="useremail">E-Mail:*</label>
+						<label htmlFor="useremail">E-Mail*</label>
 						<input name="useremail" type="email" ref={register({ required: true })} />
 						<p>Wir freuen uns, wenn Sie schon Angaben zu folgenden Anhaltspunkten machen können: </p>
 						<ul className="list">
@@ -94,7 +94,7 @@ const Kontakt = (props) => {
 					</div>
 
 					<div className="form-block">
-						<label htmlFor="nachricht">Nachricht:*</label>
+						<label htmlFor="nachricht">Nachricht*</label>
 						<textarea className="form-area" name="nachricht" rows="10" maxLength="6000" ref={register({ required: true })}></textarea>
 					</div>
 

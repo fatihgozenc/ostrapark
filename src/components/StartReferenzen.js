@@ -25,15 +25,18 @@ const StartReferenzen = () => {
 				<Slider className="start-referenzen-slider">
 					{data.posts['referenzen'].map(item => (
 						<Slide key={item.id} index={item.id}>
-							<div className="start-referenzen-item">
-								<div className="start-referenzen-img" style={{ backgroundImage: `url(${respImg(item.image.medium, item.image.large)})` }} />
-								<div className="break" />
-								<div className="start-referenzen-text">
-									<h2 className="section-subtitle">{item.title}</h2>
-									<p>{item.excerpt}</p>
-									<PageRouter route={`/referenzen/${item.slug}`} text={`MEHR LESEN `}>&rarr;</PageRouter>
+							<PageRouter route={`/referenzen/${item.slug}`}>
+								<div className="start-referenzen-item">
+									<div className="start-referenzen-img" 
+									style={{ backgroundImage: `url(${respImg(item.image.medium, item.image.large)})` }} />
+									<div className="break" />
+									<div className="start-referenzen-text">
+										<h2 className="section-subtitle">{item.title}</h2>
+										<p>{item.excerpt}</p>
+										<span className="mehr-lesen">MEHR LESEN <b>&rarr;</b></span>
+									</div>
 								</div>
-							</div>
+							</PageRouter>
 						</Slide>
 					))}
 				</Slider>

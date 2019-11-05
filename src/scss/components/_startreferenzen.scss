@@ -78,6 +78,7 @@
 		}
 	
 		.start-referenzen-text {
+			transition: .35s all cubic-bezier(.58,.12,.17,.94);
 			h2 {
 				margin: 3rem 0;
 				font-size: 1.7rem;
@@ -96,8 +97,13 @@
 					position: absolute;
 					bottom: -2.3rem;
 				}
+			}
 
-				
+			&:hover {
+				.mehr-lesen {
+					letter-spacing: 5px;
+					transition: .35s all cubic-bezier(.58,.12,.17,.94);
+				}
 			}
 
 			p {

@@ -72,13 +72,27 @@
 	text-align: center;
 }
 
+.mehr-lesen {
+	font-weight: 900;
+	letter-spacing: 1.5px;
+	transition: .35s all cubic-bezier(.58,.12,.17,.94);
+}
+
 .section-subtitle {
 	color: $darkGray;
 	letter-spacing: 2px;
 	font-weight: 700;
 	font-size: 1.4rem;
 	text-transform: uppercase;
+	transition: .35s all cubic-bezier(.58,.12,.17,.94);
+
+	&:hover {
+		.mehr-lesen {
+			letter-spacing: 5px;
+		}
+	}
 }
+
 
 .section-title-bg {
 	position: absolute;
@@ -89,6 +103,8 @@
 
 	@include lg {
 		top: -10vw;
+
+		
 	}
 }
 

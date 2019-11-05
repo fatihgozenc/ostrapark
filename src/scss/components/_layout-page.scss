@@ -10,7 +10,6 @@
 			padding: 5% 0%;
 		}
 	}
-	
 
 	p{
 		white-space: pre-wrap;
@@ -86,6 +85,7 @@
 
 	.form-block{
 		padding: 3% 0;
+		position: relative;
 
 		label {
 			font-weight: 700;
@@ -93,6 +93,21 @@
 			letter-spacing: 2px;
 			display: block;
 			padding-bottom: 2rem;
+
+			@include lg {
+				left: 3%;
+				top: 2.8vw;
+				font-size: 1rem;
+				position: absolute;
+			}
+
+			@include xl {
+				top: 2.5vw;
+			}
+		}
+
+		.animated-label{
+
 		}
 		select {
 			width: 100%;
@@ -100,7 +115,8 @@
 			border-radius: .3rem;
 			border: none;
 			padding-left: 5%;
-			background-color: #fff;
+			background: transparent;
+			box-shadow: $lightGray 1px 1px 8px inset;
 			font-size: 1.2rem;
 		}
 		input{
@@ -109,14 +125,14 @@
 			border-radius: .3rem;
 			border: none;
 			padding-left: 5%;
-			background-color: #fff;
+			box-shadow: $lightGray 1px 1px 8px inset;
 			font-size: 1.2rem;
 		}
 		textarea{
 			width: 95%;
 			border: none;
 			padding-left: 5%;
-			background-color: #fff;
+			box-shadow: $lightGray 1px 1px 8px inset;
 			font-size: 1.2rem;
 		}
 	}

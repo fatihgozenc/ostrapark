@@ -51,9 +51,7 @@
 		}
 
 		&:hover {
-			color: $darkGray;
-
-			span {
+			.mehr-lesen {
 				letter-spacing: 5px;
 				transition: .35s all cubic-bezier(.58,.12,.17,.94);
 			}

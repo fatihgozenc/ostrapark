@@ -19,13 +19,13 @@ const Referenzen = (props) => {
 
 			<section className="referenzen-list">
 				{data.posts.map((item, key) => (
-					<PageRouter route={`/referenzen/${item.slug}`}>
+					<PageRouter key={item.id}  route={`/referenzen/${item.slug}`}>
 					{key % 2 > 0 && window.innerWidth > 767
-						? <div key={item.id} className="referenzen_list_item">
+						? <div className="referenzen_list_item">
 							<div className="referenzen_list_item-text">
 								<h2 className="section-subtitle">{item.title}</h2>
 								<p>{item.excerpt}</p>
-								<span>MEHR LESEN <b>&rarr;</b></span>
+								<span className="mehr-lesen">MEHR LESEN <b>&rarr;</b></span>
 							</div>
 							<div className="break" />
 							<div className="referenzen_list_item-img" style={{
@@ -47,7 +47,7 @@ const Referenzen = (props) => {
 							<div className="referenzen_list_item-text">
 								<h2 className="section-subtitle">{item.title}</h2>
 								<p>{item.excerpt}</p>
-								<span>MEHR LESEN <b>&rarr;</b></span>
+								<span className="mehr-lesen">MEHR LESEN <b>&rarr;</b></span>
 							</div>
 						</div>}
 					</PageRouter>
