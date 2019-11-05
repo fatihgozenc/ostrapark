@@ -12,28 +12,33 @@
 
 	.section-title {
 		position: relative;
+
+		@include md{
+			padding-left: 5%;
+			font-size: 3.3rem;
+			font-weight: 500;
+			margin-bottom: 1rem;
+		}
+
 		span {
 			display: none;
 			@include lg{
 				display: block;
 				position: absolute;
 				opacity: .1;
-				font-weight: 100;
-				top: -130%;
-				font-size: 12rem;
-				right: 0;
+				top: -200%;
+				font-size: 17vw;
+				left: -15%;
 			}
 
-			@include xxl {
-				top: -250%;
-				font-size: 17rem;
-			} 
+			@include xl {
+				top: unset;
+				bottom: -11vw;
+			}
 		}
 		@include lg{
 			width: 100%;
 			text-align: left;
-			font-size: 3.3rem;
-			font-weight: 500;
 		}
 	
 	}

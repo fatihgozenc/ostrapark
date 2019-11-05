@@ -12,7 +12,7 @@ const StartReferenzen = () => {
 
 	return (
 		<section className="start-referenzen">
-			<h2 className="section-title">REFERENZEN<span>REFERENZEN</span></h2>
+			<h2 className="section-title">REFERENZEN</h2>
 			<CarouselProvider
 				naturalSlideWidth={respFunction(100, 300, 320)}
 				naturalSlideHeight={respFunction(150, 200, 100)}
@@ -41,6 +41,7 @@ const StartReferenzen = () => {
 					<div className="break" />
 					<DotGroup className="start-referenzen-nav" />
 				</div>
+				<span className="section-title-bg">REFERENZEN</span>
 			</CarouselProvider>
 		</section>
 	)

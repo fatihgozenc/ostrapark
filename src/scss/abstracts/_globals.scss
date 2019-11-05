@@ -80,7 +80,7 @@ hr {
 	transform: translateY(-10%) scaleY(1.6);
 	transition: all .4s cubic-bezier(0.075, 0.82, 0.165, 1);
 
-	@include respond-to('small') {
+	@include sm {
 		transform: none;
 	}
 }

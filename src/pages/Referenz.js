@@ -29,7 +29,7 @@ const Referenz = (props) => {
 	const selectedPostKey = matchedValue(idValues);
 
 	const paragraphs = item.content.split("\n\r");
-	const sentences = paragraphs[0].split('. ');
+	const sentences = paragraphs[0];
 	const getHalf = Math.ceil(sentences.length / 2) 
 	const firstHalfOfParagraph = sentences.slice(0, getHalf);
 	const lastHalfOfParagraph = sentences.slice(getHalf, sentences.length);

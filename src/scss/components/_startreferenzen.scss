@@ -3,12 +3,17 @@
 	margin: 10% 0;
 	position: relative;
 
+	.carousel {
+		position: relative;
+	}
+
 	@include md{
 		padding: 5% 0;
 	}
 
 	.section-title {
 		position: relative;
+		margin-bottom: 1rem;
 
 		@include md{
 			width: 95%;
@@ -40,7 +45,8 @@
 
 
 	.start-referenzen-item {
-		height: 50vh;
+		height: 100%;
+
 		@include md{
 			display: flex;
 			align-items: center;
@@ -60,6 +66,10 @@
 				width: 50%;
 				height: 40vh;
 				padding-left: 1%;
+			}
+
+			@include lg {
+				height: 50vh;
 			}
 
 			@include xxl {

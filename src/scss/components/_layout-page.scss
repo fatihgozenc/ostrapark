@@ -43,13 +43,20 @@
 				}
 			}
 
+			.form-block:nth-child(7){
+
+				@include lg {
+					margin-right: 0;
+				}
+			}
+
 			.form-check-group {
 				display: flex;
 				justify-content: space-between;
 
 				.form-check {
 					padding-right: .5rem;
-					font-size: 1.2rem;
+					font-size: 1rem;
 				}
 			}
 		}

@@ -1,0 +1,27 @@
+.contact-router{
+	padding: 5%;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 900;
+	font-size: 1.2rem;
+	display: block;
+	border-top: 1px solid $darkGray;
+	color: $darkGray;
+	transition: .35s cubic-bezier(0.23, 1, 0.320, 1) all;
+
+
+	&:hover {
+		letter-spacing: 6px;
+		transition: .35s cubic-bezier(0.23, 1, 0.320, 1) all;
+	}
+
+	@include lg{
+		font-weight: 500;
+		font-size: 1.8rem;
+		br {
+			display: none;
+		}
+	}
+	
+}

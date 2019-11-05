@@ -19,12 +19,13 @@ const Referenzen = (props) => {
 
 			<section className="referenzen-list">
 				{data.posts.map((item, key) => (
-					key % 2 > 0 && window.innerWidth > 767
+					<PageRouter route={`/referenzen/${item.slug}`}>
+					{key % 2 > 0 && window.innerWidth > 767
 						? <div key={item.id} className="referenzen_list_item">
 							<div className="referenzen_list_item-text">
 								<h2 className="section-subtitle">{item.title}</h2>
 								<p>{item.excerpt}</p>
-								<PageRouter route={`/referenzen/${item.slug}`} text={`MEHR LESEN `}>&rarr;</PageRouter>
+								<span>MEHR LESEN <b>&rarr;</b></span>
 							</div>
 							<div className="break" />
 							<div className="referenzen_list_item-img" style={{
@@ -46,10 +47,12 @@ const Referenzen = (props) => {
 							<div className="referenzen_list_item-text">
 								<h2 className="section-subtitle">{item.title}</h2>
 								<p>{item.excerpt}</p>
-								<PageRouter route={`/referenzen/${item.slug}`} text={`MEHR LESEN `}>&rarr;</PageRouter>
+								<span>MEHR LESEN <b>&rarr;</b></span>
 							</div>
-						</div>
+						</div>}
+					</PageRouter>
 				))}
+				
 			</section>
 		</>
 	)
