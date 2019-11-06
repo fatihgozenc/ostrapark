@@ -93,14 +93,16 @@
 			letter-spacing: 2px;
 			display: block;
 			padding-bottom: 2rem;
+			transition: all .35s ease; 
 
 			@include lg {
-				left: 3%;
+				left: 1.6rem;
 				top: 2.8vw;
 				font-size: 1rem;
-				position: absolute;
-			}
+				// position: absolute;
+				
 
+			}
 			@include xl {
 				top: 2.5vw;
 			}
@@ -118,6 +120,10 @@
 			background: transparent;
 			box-shadow: $lightGray 1px 1px 8px inset;
 			font-size: 1.2rem;
+
+			option{
+				color:red;
+			}
 		}
 		input{
 			width: 95%;
@@ -127,6 +133,27 @@
 			padding-left: 5%;
 			box-shadow: $lightGray 1px 1px 8px inset;
 			font-size: 1.2rem;
+			transition: all .35s ease;
+
+			&:required:valid:placeholder-shown{
+				color:red;
+			}
+
+			&:focus + select {
+				top: 0.5vw;
+				font-size: .9rem;
+				transition: all .35s ease; 
+			} 
+			
+			&:focus + label,
+			&:focus:required:valid + label
+			&:active + label,
+			&:focus-within + label
+			&:visited + label {
+				top: 0.5vw;
+				font-size: .9rem;
+				transition: all .35s ease; 
+			}
 		}
 		textarea{
 			width: 95%;

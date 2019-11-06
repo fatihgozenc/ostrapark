@@ -14,13 +14,70 @@ const Kontakt = (props) => {
 	const item = getSingleData[0];
 
 	const { register, handleSubmit, watch, errors } = useForm();
-	console.log(watch('span.wpcf7-form-control-wrap.teilnehmerzahl'));
+	console.log(watch('teilnehmerzahl'));
 
-	const onSubmit = formData => { axios({
-		method: 'post',
-		url: 'http://ostrapark.narciss-taurus.de/wordpress/wp-json/contact-form-7/v1/contact-forms/139/feedback',
-		data: formData
-	})};
+	const onSubmit = data => { 
+
+		// const formData = [
+		// 	{
+		// 		into: `span.wpcf7-form-control-wrap.location`,
+		// 		message: `${data.location}`,
+		// 		idref: `location`
+		// 	},
+		// 	{
+		// 		into: `span.wpcf7-form-control-wrap.teilnehmerzahl`,
+		// 		message: `${data.teilnehmerzahl}`,
+		// 		idref: `teilnehmerzahl`
+		// 	},
+		// 	{
+		// 		into: `span.wpcf7-form-control-wrap.vorname`,
+		// 		message: `${data.vorname}`,
+		// 		idref: `vorname`
+		// 	},
+		// 	{
+		// 		into: `span.wpcf7-form-control-wrap.nachname`,
+		// 		message: `${data.nachname}`,
+		// 		idref: `nachname`
+		// 	},
+		// 	{
+		// 		into: `span.wpcf7-form-control-wrap.useremail`,
+		// 		message: `${data.useremail}`,
+		// 		idref: `useremail`
+		// 	},
+		// 	{
+		// 		into: `span.wpcf7-form-control-wrap.nachricht`,
+		// 		message: `${data.nachricht}`,
+		// 		idref: `nachricht`
+		// 	}
+		// ];
+
+		const formData = [
+			{
+				location: `${data.location}`
+			},
+			{
+				teilnehmerzahl: `${data.teilnehmerzahl}`
+			},
+			{
+				vorname : `${data.vorname}`
+			},
+			{
+				nachname : `${data.nachname}`
+			},
+			{
+				useremail : `${data.useremail}`
+			},
+			{
+				nachricht : `${data.nachricht}`
+			}
+		];
+
+		axios({
+			method: 'post',
+			url: 'http://ostrapark.narciss-taurus.de/wordpress/wp-json/contact-form-7/v1/contact-forms/139/feedback',
+			data: formData
+		}).then(response => console.log(response, formData)).catch(error => console.log(error.response));
+	};
 
 	return (
 		<>
@@ -34,56 +91,55 @@ const Kontakt = (props) => {
 				{/* "handleSubmit" will validate your inputs before invoking "onSubmit" */}
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<div className="form-block">
-						<label htmlFor="location">Location auswählen*:</label>
-						<select name="span.wpcf7-form-control-wrap.location" ref={register({ required: true })}>
-							<option value=""></option>
+						<select name="location" ref={register({ required: true })}>
 							<option value="Ostra-Areal Dresden">Ostra-Areal Dresden</option>
 							<option value="Erlwein Capitol">Erlwein Capitol</option>
 							<option value="Erlwein Forum">Erlwein Forum</option>
 							<option value="Seehaus">Seehaus</option>
 						</select>
+						<label htmlFor="location">Location auswählen*:</label>
 					</div>
 					<div className="form-block">
-						<label htmlFor="termin">Termin:</label>
 						<input name="termin" type="date" ref={register} />
+						<label htmlFor="termin">Termin:</label>
 					</div>
 					<div className="form-block">
-						<label htmlFor="budget">Budget:</label>
 						<input name="budget" placeholder="€" type="number" ref={register} />
+						<label htmlFor="budget">Budget:</label>
 					</div>
 					<div className="form-block">
-						<label htmlFor="span.wpcf7-form-control-wrap.teilnehmerzahl">Geplante Teilnehmeranzahl:</label>
+						<label htmlFor={`teilnehmerzahl`}>Geplante Teilnehmeranzahl:</label>
 						<div className="form-check-group">
 							<div className="form-check">
-								<input className="form-check-input" type="radio" name="span.wpcf7-form-control-wrap.teilnehmerzahl" ref={register} value="20-50" />
-								<label className="form-check-label" htmlFor="span.wpcf7-form-control-wrap.teilnehmerzahl">20-50</label>
+								<input className="form-check-input" type="radio" name={`teilnehmerzahl`} ref={register} value="20-50" />
+								<label className="form-check-label" htmlFor={`teilnehmerzahl`}>20-50</label>
 							</div>
 							<div className="form-check">
-								<input className="form-check-input" type="radio" name="span.wpcf7-form-control-wrap.teilnehmerzahl" ref={register} value="50-100" />
-								<label className="form-check-label" htmlFor="span.wpcf7-form-control-wrap.teilnehmerzahl">50-100</label>
+								<input className="form-check-input" type="radio" name={`teilnehmerzahl`} ref={register} value="50-100" />
+								<label className="form-check-label" htmlFor={`teilnehmerzahl`}>50-100</label>
 							</div>
 							<div className="form-check">
-								<input className="form-check-input" type="radio" name="span.wpcf7-form-control-wrap.teilnehmerzahl" ref={register} value="100-500" />
-								<label className="form-check-label" htmlFor="span.wpcf7-form-control-wrap.teilnehmerzahl">100-500</label>
+								<input className="form-check-input" type="radio" name={`teilnehmerzahl`} ref={register} value="100-500" />
+								<label className="form-check-label" htmlFor={`teilnehmerzahl`}>100-500</label>
 							</div>
 							<div className="form-check">
-								<input className="form-check-input" type="radio" name="span.wpcf7-form-control-wrap.teilnehmerzahl" ref={register} value="500+" />
-								<label className="form-check-label" htmlFor="span.wpcf7-form-control-wrap.teilnehmerzahl">über 500</label>
+								<input className="form-check-input" type="radio" name={`teilnehmerzahl`} ref={register} value="500+" />
+								<label className="form-check-label" htmlFor={`teilnehmerzahl`}>über 500</label>
 							</div>
 						</div>
 					</div>
 					<div className="form-block">
-						<label htmlFor="vorname">Vorname*</label>
 						<input name="vorname" ref={register({ required: true })} />
+						<label htmlFor="vorname">Vorname*</label>
 					</div>
 					<div className="form-block">
-						<label htmlFor="nachname">Nachname*</label>
 						<input name="nachname" ref={register({ required: true })} />
+						<label htmlFor="nachname">Nachname*</label>
 					</div>
 
 					<div className="form-block">
-						<label htmlFor="useremail">E-Mail*</label>
 						<input name="useremail" type="email" ref={register({ required: true })} />
+						<label htmlFor="useremail">E-Mail*</label>
 						<p>Wir freuen uns, wenn Sie schon Angaben zu folgenden Anhaltspunkten machen können: </p>
 						<ul className="list">
 							<li>Catering (eigener Caterer oder über die Golden Door)</li>
@@ -94,8 +150,8 @@ const Kontakt = (props) => {
 					</div>
 
 					<div className="form-block">
-						<label htmlFor="nachricht">Nachricht*</label>
 						<textarea className="form-area" name="nachricht" rows="10" maxLength="6000" ref={register({ required: true })}></textarea>
+						<label htmlFor="nachricht">Nachricht*</label>
 					</div>
 
 					{/* errors will return when field validation fails  */}
