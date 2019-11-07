@@ -2,7 +2,7 @@
 	padding: 10%;
 
 	@include md{
-		padding: 5% 0;
+		padding: 0 0 5% 0;
 	}
 
 	.referenzen_list_item{
@@ -19,6 +19,10 @@
 			@include md {
 				height: 32rem;
 				flex: 1 0 50%;
+			}
+
+			@include xxl{
+				height: 50vh;
 			}
 		}
 

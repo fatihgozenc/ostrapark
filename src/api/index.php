@@ -2,41 +2,42 @@
 $rest_json = file_get_contents("php://input");
 $_POST = json_decode($rest_json, true);
 
-if (empty($_POST['fname']) && empty($_POST['email'])) die();
+if (empty($_POST['vorname']) && empty($_POST['useremail'])) die();
 
-if ($_POST)
-	{
-
-	// set response code - 200 OK
+if ($_POST){
 
 	http_response_code(200);
-	$subject = $_POST['fname'];
-	$to = "fatihgozenc@gmail.com";
-	$from = $_POST['email'];
+	$subject = "Sie haben eine Nachricht aus ostrapark-location.de";
+	// $to = "info@ostrapark.de";
+	$to = "f.gozenc@narciss-taurus.de";
+	$from = $_POST['useremail'];
+	
+	//DATA
+	$location = $_POST['location'];
+	$vorname = $_POST['vorname'];
+	$nachname = $_POST['nachname'];
+	$budget = $_POST['budget'];
+	$teilnehmerzahl = $_POST['teilnehmerzahl'];
+	$nachricht = $_POST['nachricht'];
+	$acceptance = $_POST['acceptance'];
+	
+	$msg = "\r\nNachricht von " . $vorname . " " . $nachname . "\r\n\n";
+	$msg.= "Location: " . $location . "\r\n\n";
+	$msg.= "Budget: " . $budget . "\r\n\n";
+	$msg.= "Teilnehmerzahl: " . $teilnehmerzahl . "\r\n\n";
+	$msg.= "Nachricht: " . $nachricht;
 
-	// data
-
-	$msg = $_POST['message'];
-
-	// Headers
-
+	// HEADERS
 	$headers = "MIME-Version: 1.0\r\n";
-	$headers.= "Content-type: text/html; charset=UTF-8\r\n";
+	$headers.= "Content-type: text/plain; charset=UTF-8\r\n";
 	$headers.= "From: <" . $from . ">";
 	mail($to, $subject, $msg, $headers);
-
-	// echo json_encode( $_POST );
 
 	echo json_encode(array(
 		"sent" => true
 	));
-	}
-  else
-	{
-
-	// tell the user about error
-
+} else {
 	echo json_encode(["sent" => false, "message" => "Something went wrong"]);
-	}
+}
 
 ?>

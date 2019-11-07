@@ -56,27 +56,7 @@ form {
 	}
 }
 
-.form-submit{
-	font-family: inherit;
-	margin: 6rem 0;
-	position: relative;
-	border-radius: .5rem;
-	width: 100%;
-	font-size: 1.2rem;
-	height: 8rem;
-	text-transform: uppercase;
-	background: transparent;
-	letter-spacing: 3px;
-	color: $darkGray;
-	transition: all .35s cubic-bezier(.59,0,.36,1.01);
 
-	&:hover {
-		color:#fff;
-		background: $darkGray;
-		transition: all .35s cubic-bezier(.59,0,.36,1.01);
-		letter-spacing: 8px;
-	}
-}
 
 ul {
 	margin: 0;
@@ -155,6 +135,7 @@ ul {
 }
 
 .form-block-checkbox {
+	position: relative;
 	@include md {
 		font-size: .9em;
 	}
@@ -230,4 +211,48 @@ ul {
 	@include md {
 		transform: inherit;
 	}
+}
+
+.form-notvalid {
+	color: darken(red, 20%);
+	text-transform: uppercase;
+	font-size: .8rem;
+	letter-spacing: 2px;
+	position: absolute;
+	bottom: -1.6rem;
+	left: 1rem;
+}
+
+.form-submit{
+	font-family: inherit;
+	position: relative;
+	border-radius: .5rem;
+	width: 100%;
+	font-size: 1.2rem;
+	height: 8rem;
+	text-transform: uppercase;
+	background: transparent;
+	letter-spacing: 3px;
+	color: $darkGray;
+	transition: all .35s cubic-bezier(.59,0,.36,1.01);
+
+	&:hover {
+		color:#fff;
+		background: $darkGray;
+		transition: all .35s cubic-bezier(.59,0,.36,1.01);
+		letter-spacing: 8px;
+	}
+}
+
+.form_send {
+	display: flex;
+	align-items: center;
+	position: relative;
+	height: 30rem;
+}
+
+.form_send-success {
+	height: 30rem;
+	position: absolute;
+	top: 0;
 }

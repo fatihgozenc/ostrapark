@@ -54,6 +54,7 @@ const App = () => {
 									<Route exact path="/kontakt" component={Kontakt} />
 									<Route exact path="/impressum" component={Impressum} />
 									<Route exact path="/datenschutz" component={Datenschutz} />
+									<Route path="/" component={Home} />
 								</Switch>
 							</animated.div>
 						))}

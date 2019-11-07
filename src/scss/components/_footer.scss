@@ -40,6 +40,10 @@
 			color: $darkGray;
 			padding: 1rem 0;
 
+			@include lg {
+				padding: initial;
+			}
+
 			&:first-child{
 				font-size: 1.6em;
 				margin-bottom: 0;
@@ -95,6 +99,15 @@
 	}
 }
 
+.gd_address {
+	margin-top: 2rem;
+	div{
+		margin: 2rem 0 0 0;
+	}
+	@include lg {
+		margin: 0;
+	}
+}
 
 
 .footer-bottom {

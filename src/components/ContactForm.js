@@ -1,7 +1,7 @@
 import React from 'react';
 import useForm from 'react-hook-form';
 import axios from 'axios';
-const MAIL_PATH = 'http://ostrapark.narciss-taurus.de/api/index.php';
+const MAIL_PATH = 'api/index.php';
 
 const ContactForm = () => {
 
@@ -72,6 +72,7 @@ const ContactForm = () => {
 				</div>
 
 				<div className="form-block">
+					{errors.useremail && <span className="form-notvalid">Dieses Feld wird benötigt</span>}
 					<input className="floating-label-field" placeholder="email" name="useremail" type="email" ref={register({ required: true })} />
 					<label className="floating-label" htmlFor="useremail">E-Mail*</label>
 					<p>Wir freuen uns, wenn Sie schon Angaben zu folgenden Anhaltspunkten machen können: </p>
@@ -91,11 +92,27 @@ const ContactForm = () => {
 
 				<div className="form-block-checkbox">
 					<label>
+						{errors.acceptance && <span className="form-notvalid">Dieses Feld wird benötigt</span>}
 						<input className="floating-label-field" name="acceptance" type="checkbox" ref={register({ required: true })} />Ich stimme mit den
 						<a href="/datenschutz"> <b>Datenschutzbedingungen</b></a> von Golden Door GmbH überein.</label>
 				</div>
 
-				<input className="floating-label-field" type="submit" className="form-submit" value="Senden &rarr;" />
+				<div className="form_send">
+					<input className="floating-label-field" type="submit" className="form-submit" value="Senden &rarr;" />
+					<div className="form_send-success">
+						<svg style={{width: 160, height: 160}}>
+							<defs>
+								<linearGradient id="linear" x1="0%" y1="0%" x2="100%" y2="0%">
+									<stop offset="0%"   stop-color="#fff"/>
+									<stop offset="100%" stop-color="#666"/>
+								</linearGradient>
+							</defs>
+
+							<circle cx="80" cy="80" r="70" stroke="url(#linear)" fill="transparent" strokeWidth="5"/>
+
+						</svg>
+					</div>
+				</div>
 			</form>
 		</div >
 	);
