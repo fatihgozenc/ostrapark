@@ -1,6 +1,7 @@
 import React from 'react';
 import { ReferenzenContext } from '../context/ReferenzenContext';
 import PageRouter from '../components/PageRouter';
+import MehrLesen from '../components/MehrLesen';
 import respFunction from '../helpers/respFunction';
 import Hero from '../components/Hero'
 
@@ -25,7 +26,7 @@ const Referenzen = (props) => {
 							<div className="referenzen_list_item-text">
 								<h2 className="section-subtitle">{item.title}</h2>
 								<p>{item.excerpt}</p>
-								<span className="mehr-lesen">MEHR LESEN <b>&rarr;</b></span>
+								<MehrLesen/>
 							</div>
 							<div className="break" />
 							<div className="referenzen_list_item-img" style={{
@@ -47,7 +48,7 @@ const Referenzen = (props) => {
 							<div className="referenzen_list_item-text">
 								<h2 className="section-subtitle">{item.title}</h2>
 								<p>{item.excerpt}</p>
-								<span className="mehr-lesen">MEHR LESEN <b>&rarr;</b></span>
+								<MehrLesen/>
 							</div>
 						</div>}
 					</PageRouter>

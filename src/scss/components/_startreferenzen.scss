@@ -47,6 +47,8 @@
 	.start-referenzen-item {
 		height: 100%;
 
+		@include mehrlesen_hover;
+
 		@include md{
 			display: flex;
 			align-items: center;
@@ -96,13 +98,6 @@
 					display: block;
 					position: absolute;
 					bottom: -2.3rem;
-				}
-			}
-
-			&:hover {
-				.mehr-lesen {
-					letter-spacing: 5px;
-					transition: .35s all cubic-bezier(.58,.12,.17,.94);
 				}
 			}
 

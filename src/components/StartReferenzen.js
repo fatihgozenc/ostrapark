@@ -1,18 +1,19 @@
 import React from 'react';
 import PageRouter from './PageRouter';
 import { HomeContext } from '../context/HomeContext';
+import MehrLesen from '../components/MehrLesen';
 import { CarouselProvider, Slider, Slide, DotGroup } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import { respImg } from '../helpers/respImg';
 import respFunction from '../helpers/respFunction';
-
 
 const StartReferenzen = () => {
 	const [data] = React.useContext(HomeContext);
 
 	return (
 		<section className="start-referenzen">
-			<h2 className="section-title">REFERENZEN</h2>
+			<PageRouter route={`/referenzen`} >
+			<h2 className="section-title">REFERENZEN</h2></PageRouter>
 			<CarouselProvider
 				naturalSlideWidth={respFunction(100, 300, 320)}
 				naturalSlideHeight={respFunction(150, 200, 100)}
@@ -33,7 +34,7 @@ const StartReferenzen = () => {
 									<div className="start-referenzen-text">
 										<h2 className="section-subtitle">{item.title}</h2>
 										<p>{item.excerpt}</p>
-										<span className="mehr-lesen">MEHR LESEN <b>&rarr;</b></span>
+										<MehrLesen/>
 									</div>
 								</div>
 							</PageRouter>

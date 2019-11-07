@@ -8,11 +8,11 @@
 
 	a {
 		color: #fff;
-		font-weight: 300;
-		letter-spacing: 1.5px;
+		font-weight: 500;
 		font-size: .8em;
 
 		@include lg {
+			letter-spacing: 1.5px;
 			font-weight: 700;
 			font-size: .6em;
 		}
@@ -27,14 +27,13 @@
 
 			h2 {
 				text-transform: uppercase;
-				font-weight: 300;
+				font-weight: 500;
 				letter-spacing: 2px;
 				font-size: 2.8rem;
 
 				@include lg {
 					letter-spacing: 4px;
 					font-size: 5rem;
-					font-weight: 500;
 					margin-bottom: 1rem;
 				}
 			}
@@ -55,7 +54,12 @@
 				color: #fff;
 				text-align: center;
 				font-size: 1.6rem;
-				
+
+				@include mehrlesen_hover;
+
+				.mehrlesen_arrow{
+					background-color: #fff;
+				}
 
 				@include lg {
 					text-align: left;
@@ -91,16 +95,17 @@
 	}
 
 	button {
-		height: 1.5rem;
-		width: 1.5rem;
+		height: 2rem;
+		width: 2rem;
 		border: none;
 		background: $darkGray;
 		border-radius: 1.7rem;
-		transform: scale(.3);
+		transform: scale(.6);
 		transition: .5s all;
 
 		@include lg {
 			margin-right: 2rem;
+			transform: scale(.4);
 			height: 1.2rem;
 			width: 1.2rem;
 		}

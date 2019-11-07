@@ -1,0 +1,45 @@
+.mehrlesen {
+	line-height: 1;
+	height: 16px;
+	display: flex;
+	letter-spacing: 1.5px;
+	font-size: .95rem !important;
+	transition: .35s all cubic-bezier(.58,.12,.17,.94);
+	align-items: center;
+
+	.mehrlesen_text {
+		font-weight: 900;
+		transition: inherit;
+	}
+	.mehrlesen_arrow {
+		margin: auto 0;
+		position: relative;
+		display: inline-block;
+		height: 1px;
+		background-color: $darkGray;
+		width: 60px;
+		transition: inherit;
+
+		&::after {
+			content: '>';
+			bottom: -8px;
+			right: -4px;
+			font-size: 19px;
+			position: absolute;
+		}
+	}
+}
+
+@mixin mehrlesen_hover {
+	&:hover {
+		.mehrlesen_text {
+			letter-spacing: 5px;
+			transition: .35s all cubic-bezier(.58,.12,.17,.94);
+		}
+
+		.mehrlesen_arrow {
+			width: 160px;
+			transition: .35s all cubic-bezier(.58,.12,.17,.94);
+		}
+	}
+}

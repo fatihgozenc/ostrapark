@@ -1,5 +1,4 @@
 <?php
-header("Access-Control-Allow-Origin: *");
 $rest_json = file_get_contents("php://input");
 $_POST = json_decode($rest_json, true);
 
@@ -12,7 +11,7 @@ if ($_POST)
 
 	http_response_code(200);
 	$subject = $_POST['fname'];
-	$to = "usr76401@cock.li";
+	$to = "fatihgozenc@gmail.com";
 	$from = $_POST['email'];
 
 	// data

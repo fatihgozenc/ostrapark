@@ -1,6 +1,7 @@
 import React from 'react';
 import { HomeContext } from '../context/HomeContext';
 import PageRouter from './PageRouter'
+import MehrLesen from '../components/MehrLesen';
 import { CarouselProvider, Slider, Slide, DotGroup } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import { animated, useSpring } from 'react-spring';
@@ -34,7 +35,8 @@ const Start = () => {
 									style={{ backgroundImage: `url(${respImg(item.image.large, item.image.full)})` }}>
 									<div className="start-slider-text">
 										<h2>{item.title}</h2>
-										<p>{item.excerpt}<span className="right-arrow">&nbsp;&nbsp;MEHR LESEN<b>&nbsp;&nbsp;&rarr;</b></span></p>
+										<p>{item.excerpt}</p>
+										<MehrLesen/>
 									</div>
 								</div>
 								</PageRouter>

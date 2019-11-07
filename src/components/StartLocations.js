@@ -8,7 +8,8 @@ const StartLocations = () => {
 
 	return (
 		<section className="start-locations">
-			<h2 className="section-title">LOCATIONS<span>LOCATIONS</span></h2>
+			<PageRouter route={`/locations`} >
+			<h2 className="section-title">LOCATIONS<span>LOCATIONS</span></h2></PageRouter>
 			<div className="start-locations-wrapper">
 				{data.posts['locations'].map(item => (
 					<PageRouter key={item.id} route={`/locations/${item.slug}`} >

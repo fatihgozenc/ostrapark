@@ -1,74 +1,104 @@
 import React from 'react';
+import useForm from 'react-hook-form';
 import axios from 'axios';
-const API_PATH = 'http://ostrapark.narciss-taurus.de/api/index.php';
+const MAIL_PATH = 'http://ostrapark.narciss-taurus.de/api/index.php';
 
-class ContactForm extends React.Component {
+const ContactForm = () => {
 
-	constructor(props) {
-		super(props);
-		this.state = {
-			fname: '',
-			lname: '',
-			email: '',
-			message: '',
-			mailSent: false,
-			error: null
-		}
-	}
+	const [dataIsSent, setDataIsSent] = React.useState("");
+	const { register, handleSubmit, watch, errors } = useForm();
+	console.log(watch());
 
-	handleFormSubmit = e => {
-		e.preventDefault();
+	const onSubmit = (formData) => {
+		console.log(formData)
+		// e.preventDefault();
 		axios({
 			method: 'post',
-			url: `${API_PATH}`,
+			url: `${MAIL_PATH}`,
 			headers: { 'content-type': 'application/json' },
-			data: this.state
+			data: formData
 		})
-			.then(result => {
-				this.setState({
-					mailSent: result.data.sent
-				})
-			})
-			.catch(error => this.setState({ error: error.message }));
-	};
-
-	render() {
-		return (
-			<div className="contact-form">
-				<p>Contact Me</p>
-				<div>
-					<form action="#" >
-						<label>First Name</label>
-						<input type="text" id="fname" name="firstname" placeholder="Your name.."
-							value={this.state.fname}
-							onChange={e => this.setState({ fname: e.target.value })}
-						/>
-						<label>Last Name</label>
-						<input type=" text" id="lname" name="lastname" placeholder="Your last name.."
-							value={this.state.lname}
-							onChange={e => this.setState({ lname: e.target.value })}
-						/>
-						<label>Email</label>
-						<input type="email" id="email" name="email" placeholder="Your email"
-							value={this.state.email}
-							onChange={e => this.setState({ email: e.target.value })}
-						/>
-						<label>Message</label>
-						<textarea id="message" name="message" placeholder="Write something.."
-							onChange={e => this.setState({ message: e.target.value })}
-							value={this.state.message}
-						></textarea>
-						<input type="submit" onClick={e => this.handleFormSubmit(e)} value="Submit" />
-						<div>
-							{this.state.mailSent &&
-								<div>Thank you for contacting us.</div>
-							}
-						</div>
-					</form >
-				</div>
-			</div >
-		);
+		.then(result => setDataIsSent(result.data.sent))
+		.catch(error => console.log(error.response));
 	}
+	return (
+		<div className="contact-form">
+			<form onSubmit={handleSubmit(onSubmit)}>
+				<div className="form-block">
+					<select className="floating-label-field" placeholder="Location Auswahlen" name="location" ref={register({ required: true })}>
+						<option value="Ostra-Areal Dresden">Ostra-Areal Dresden</option>
+						<option value="Erlwein Capitol">Erlwein Capitol</option>
+						<option value="Erlwein Forum">Erlwein Forum</option>
+						<option value="Seehaus">Seehaus</option>
+					</select>
+					<label className="floating-label notinput" htmlFor="location">Location auswählen*:</label>
+				</div>
+				<div className="form-block">
+					<input className="floating-label-field" placeholder="dd/mm/yy" name="termin" type="date" ref={register} />
+					<label className="floating-label notinput" htmlFor="termin">Termin:</label>
+				</div>
+				<div className="form-block">
+					<input className="floating-label-field" name="budget" placeholder="€" type="number" ref={register} />
+					<label className="floating-label" htmlFor="budget">Budget(€):</label>
+				</div>
+				<div className="form-block">
+					<div className="form-check-group">
+						<div className="form-check">
+							<input className="form-check-input" type="radio" name={`teilnehmerzahl`} ref={register} value="20-50" />
+							<label className="form-check-label floating-label" htmlFor={`teilnehmerzahl`}>20-50</label>
+						</div>
+						<div className="form-check">
+							<input className="form-check-input" type="radio" name={`teilnehmerzahl`} ref={register} value="50-100" />
+							<label className="form-check-label floating-label" htmlFor={`teilnehmerzahl`}>50-100</label>
+						</div>
+						<div className="form-check">
+							<input className="form-check-input" type="radio" name={`teilnehmerzahl`} ref={register} value="100-500" />
+							<label className="form-check-label floating-label" htmlFor={`teilnehmerzahl`}>100-500</label>
+						</div>
+						<div className="form-check">
+							<input className="form-check-input" type="radio" name={`teilnehmerzahl`} ref={register} value="500+" />
+							<label className="form-check-label" htmlFor={`teilnehmerzahl`}>über 500</label>
+						</div>
+					</div>
+					<label className="floating-label floated" htmlFor={`teilnehmerzahl`}>Geplante Teilnehmeranzahl:</label>
+				</div>
+				<div className="form-block">
+					<input className="floating-label-field" placeholder="vorname" name="vorname" required ref={register({ required: true })} />
+					<label className="floating-label" htmlFor="vorname">Vorname*</label>
+				</div>
+				<div className="form-block">
+					<input className="floating-label-field" placeholder="nachname" name="nachname" required ref={register({ required: true })} />
+					<label className="floating-label" htmlFor="nachname">Nachname*</label>
+				</div>
+
+				<div className="form-block">
+					<input className="floating-label-field" placeholder="email" name="useremail" type="email" ref={register({ required: true })} />
+					<label className="floating-label" htmlFor="useremail">E-Mail*</label>
+					<p>Wir freuen uns, wenn Sie schon Angaben zu folgenden Anhaltspunkten machen können: </p>
+					<ul className="list">
+						<li>Catering (eigener Caterer oder über die Golden Door)</li>
+						<li>Mobiliar / Bestuhlung</li>
+						<li>Technik</li>
+						<li>Deko</li>
+					</ul>
+				</div>
+
+				<div className="form-block">
+					{errors.nachricht && <span className="form-notvalid">Dieses Feld wird benötigt</span>}
+					<textarea className="form-area floating-label-field" placeholder="nachricht" name="nachricht" rows="10" maxLength="6000" ref={register({ required: true })}></textarea>
+					<label className="floating-label" htmlFor="nachricht">Nachricht*</label>
+				</div>
+
+				<div className="form-block-checkbox">
+					<label>
+						<input className="floating-label-field" name="acceptance" type="checkbox" ref={register({ required: true })} />Ich stimme mit den
+						<a href="/datenschutz"> <b>Datenschutzbedingungen</b></a> von Golden Door GmbH überein.</label>
+				</div>
+
+				<input className="floating-label-field" type="submit" className="form-submit" value="Senden &rarr;" />
+			</form>
+		</div >
+	);
 }
 
 

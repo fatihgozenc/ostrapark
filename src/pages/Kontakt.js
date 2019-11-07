@@ -1,8 +1,6 @@
 import React from 'react';
 import Hero from '../components/Hero';
 import { HomeContext } from '../context/HomeContext';
-// import useForm from 'react-hook-form';
-// import axios from 'axios';
 
 import ContactForm from '../components/ContactForm';
 

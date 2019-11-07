@@ -1,35 +1,233 @@
-.contact-form {
+form {
 
-	input[type=text],
-	input[type=email],
-	select,
-	textarea {
-		width: 100%;
-		padding: 12px;
-		border: 1px solid #ccc;
-		border-radius: 4px;
-		box-sizing: border-box;
-		margin-top: 6px;
-		margin-bottom: 16px;
-		resize: vertical;
+	.form-check-group {
+		padding: 5%;
+	}
+	@include md {
+		display:flex;
+		flex-wrap: wrap;
+
+		.form-block {
+			flex: 1 0 48%;
+		}
+
+		.form-block:nth-child(odd){
+			margin-right: 2%;
+		}
+
+		.form-block:nth-child(8){
+			flex: 1 0 100%;
+		
+		}
+
+		.form-block:nth-child(4){
+			flex: 1 0 100%;
+
+			@include lg {
+				flex: 1 0 48%;
+			}
+		}
+
+		.form-block:nth-child(7){
+
+			@include lg {
+				margin-right: 0;
+			}
+
+			input {
+				width: 98%;
+			}
+		}
+
+		.form-check-group {
+			padding: initial;
+			display: flex;
+			justify-content: space-between;
+
+			.form-check {
+				padding-right: .5rem;
+				font-size: 1rem;
+			}
+		}
 	}
 
-	input[type=submit] {
-		background-color: #4CAF50;
-		color: white;
-		padding: 12px 20px;
+	@include lg {
+		padding: 0 11vw;
+	}
+}
+
+.form-submit{
+	font-family: inherit;
+	margin: 6rem 0;
+	position: relative;
+	border-radius: .5rem;
+	width: 100%;
+	font-size: 1.2rem;
+	height: 8rem;
+	text-transform: uppercase;
+	background: transparent;
+	letter-spacing: 3px;
+	color: $darkGray;
+	transition: all .35s cubic-bezier(.59,0,.36,1.01);
+
+	&:hover {
+		color:#fff;
+		background: $darkGray;
+		transition: all .35s cubic-bezier(.59,0,.36,1.01);
+		letter-spacing: 8px;
+	}
+}
+
+ul {
+	margin: 0;
+}
+
+.form-block{
+	margin: 16% 0;
+	@include md {
+		margin: 4% 0;
+	}
+	position: relative;
+
+	label {
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		display: block;
+		transition: all .35s ease;	
+	}
+
+	select {
+		width: 99%;
+		height: 3.2rem;
+		border-radius: .3rem;
 		border: none;
-		border-radius: 4px;
-		cursor: pointer;
-	}
+		padding-left: 2rem;
+		background: transparent;
+		box-shadow: $lightGray 1px 1px 8px inset;
+		font-size: 1.2rem;
+		
+		&::-webkit-select-edit { padding-left: 1rem; }
 
-	input[type=submit]:hover {
-		background-color: #45a049;
+		option{
+			color:red;
+		}
 	}
-
-	.container {
+	input{
+		font-family: inherit;
+		width: 95%;
+		height: 3.2rem;
+		border-radius: .3rem;
+		border: none;
+		padding-left: 1rem;
+		box-shadow: $lightGray 1px 1px 8px inset;
+		font-size: 1.2rem;
+		background: transparent;
+		&::-webkit-datetime-edit { padding-left: 1rem; }
+	}
+	textarea{
+		width: 95%;
+		border: none;
 		border-radius: 5px;
-		background-color: #f2f2f2;
-		padding: 20px;
+		padding: 1rem;
+		background: transparent;
+		box-shadow: $lightGray 1px 1px 8px inset;
+		font-size: 1.2rem;
+	}
+}
+
+.form-check {
+	display: flex;
+	align-items: center;
+
+	input {
+		box-shadow: initial;
+	}
+	label {
+		padding: 0;
+		display: inline-block;
+	}
+}
+
+.form-check-input {
+	width: auto !important;
+	
+}
+
+.form-block-checkbox {
+	@include md {
+		font-size: .9em;
+	}
+}
+
+
+.floating-label-field {
+	
+	border-width: 0;
+	color: rgba(#2c3e50, .75);
+	&:focus {
+		outline: 0;
+		box-shadow: 0;
+	}
+  
+	&::placeholder {
+		color: transparent;
+	}
+
+	& + .floating-label {
+		font-size: 10px;
+		z-index: -1;
+		position: absolute;
+		top: 0;
+		left: 0;
+		user-select: none;
+		transition: transform .35s, opacity .35s cubic-bezier(.59,0,.36,1.01);
+		transform-origin: 0 0;
+		opacity: 1;
+		line-height: 1;
+		font: inherit;
+		padding: 8px 0 2rem 1rem;
+		height: 4em;
+
+		@include lg {
+			padding: 14px 0 2rem 1rem;
+
+		}
+	}
+
+	&:focus,
+	&:not(:placeholder-shown) {
+		border-color: rgba(white, .1);
+		& + .floating-label {
+			transform: translate(1%, -30%) scale(.8);
+			opacity: .5;
+		}
+	}
+
+	&:not(:placeholder-shown):invalid {
+		border-color: red 1px solid;
+		& + .floating-label {
+			transform: translate(1%, -30%) scale(.8);
+			opacity: 1;
+			color: darken(red, 20%);
+		}
+	}
+}
+
+.floated {
+	opacity: 1;
+    top: 0;
+	position: absolute;
+	
+	@include md {
+		transform: translate(-9%, -90%) scale(0.8);
+	}
+}
+
+.notinput {
+	opacity:1 !important;
+	transform: translateY(-3rem) !important;
+	@include md {
+		transform: inherit;
 	}
 }
