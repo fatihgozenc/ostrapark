@@ -11,32 +11,40 @@ const ContactForm = (props) => {
 	const kontaktForm = React.useRef();
 	const sending = React.useRef();
 	const successMessage = React.useRef();
+	const emailparent = React.useRef();
 
 	const onSubmit = (formData) => {
-		axios({
-			method: 'post',
-			url: `${MAIL_PATH}`,
-			headers: { 'content-type': 'application/json' },
-			data: formData
-		})
-			.then(result => setDataIsSent(result.data.sent))
-			.catch(error => console.log(error.response));
+			axios({
+				method: 'post',
+				url: `${MAIL_PATH}`,
+				headers: { 'content-type': 'application/json' },
+				data: formData
+			})
+				.then(result => setDataIsSent(result.data.sent))
+				.catch(error => console.log(error.response));
 	}
 
-	console.log(props.data)
+	const isMailValid = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 	const sendPostAnim = (e) => {
-		if (watch('nachname').length > 2 && watch('vorname').length > 2 && watch('useremail').length > 2 && watch('nachricht').length > 2) {
-			e.target.classList.add('goAway')
-			sending.current.classList.add('d-show');
-			setTimeout(() => {
-				sending.current.classList.add('goAway');
-				sending.current.classList.remove('d-show');
-				setTimeout(() => {
-					successMessage.current.classList.add('d-show')
-				}, 150);
-			}, 1500);
-		} else return null
+		if 	(
+					watch('nachname').length > 2 && 
+					watch('vorname').length > 2 && 
+					isMailValid.test(watch('useremail')) && 
+					watch('nachricht').length > 2
+				) {
+					e.target.classList.add('goAway')
+					sending.current.classList.add('d-show');
+					setTimeout(() => {
+						sending.current.classList.add('goAway');
+						sending.current.classList.remove('d-show');
+						setTimeout(() => {
+							successMessage.current.classList.add('d-show')
+						}, 150);
+					}, 1500);
+				} else if (isMailValid.test(watch('useremail')) === false) {
+						emailparent.current.firstElementChild.style.border = '1px solid red';
+				} else return null
 	}
 
 	return (
@@ -92,7 +100,7 @@ const ContactForm = (props) => {
 					<label className="floating-label" htmlFor="nachname">Nachname*</label>
 				</div>
 
-				<div className="form-block">
+				<div className="form-block" ref={emailparent}>
 					{errors.useremail && <span className="form-notvalid">Dieses Feld wird benötigt</span>}
 					<input className="floating-label-field" placeholder="email" name="useremail" type="email" ref={register({ required: true })} />
 					<label className="floating-label" htmlFor="useremail">E-Mail*</label>
