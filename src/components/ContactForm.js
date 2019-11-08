@@ -126,7 +126,7 @@ const ContactForm = () => {
 							</defs>
 							<circle cx="80" cy="80" r="70" stroke="url(#linear)" fill="transparent" strokeWidth="5" />
 						</svg>
-						<p ref={successMessage} className="form_send-success-msg">Your mail has sent<br />This is second line</p>
+						<p ref={successMessage} className="form_send-success-msg">Vielen Dank für Ihre Anfrage.<br />Wir melden uns umgehend bei Ihnen.</p>
 					</div>
 					<input onClick={sendPostAnim} className="floating-label-field" type="submit" className="form-submit" value="Senden &rarr;" />
 				</div>

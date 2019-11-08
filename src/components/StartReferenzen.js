@@ -16,7 +16,7 @@ const StartReferenzen = () => {
 			<h2 className="section-title">REFERENZEN</h2></PageRouter>
 			<CarouselProvider
 				naturalSlideWidth={respFunction(100, 300, 320)}
-				naturalSlideHeight={respFunction(150, 200, 100)}
+				naturalSlideHeight={respFunction(140, 200, 100)}
 				totalSlides={6}
 				isPlaying={true}
 				interval={6000}

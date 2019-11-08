@@ -84,7 +84,7 @@ ul {
 		width: 99%;
 		height: 3.2rem;
 		border-radius: .3rem;
-		border: none;
+		border: $lightGray 1px solid;
 		padding-left: 2rem;
 		background: transparent;
 		box-shadow: $lightGray 1px 1px 8px inset;
@@ -100,7 +100,7 @@ ul {
 		width: 95%;
 		height: 3.2rem;
 		border-radius: .3rem;
-		border: none;
+		border: $lightGray 1px solid;
 		padding-left: 1rem;
 		box-shadow: $lightGray 1px 1px 8px inset;
 		font-size: 1.2rem;
@@ -114,6 +114,7 @@ ul {
 	textarea {
 		width: 95%;
 		border: none;
+		border: $lightGray 1px solid;
 		border-radius: 5px;
 		padding: 1rem;
 		background: transparent;
@@ -125,6 +126,11 @@ ul {
 .form-check {
 	display: flex;
 	align-items: center;
+	padding: 2rem 0 0 0;
+
+	@include md {
+		padding: 0;
+	}
 
 	input {
 		box-shadow: initial;
@@ -151,7 +157,7 @@ ul {
 
 
 .floating-label-field {
-
+	-webkit-appearance: none;
 	border-width: 0;
 	color: rgba(#2c3e50, .75);
 

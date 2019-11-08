@@ -12,6 +12,15 @@
 		transition: inherit;
 	}
 
+	.mehrlesen_graph {
+		width: 60px;
+		overflow: hidden;
+		transition: .35s all cubic-bezier(.58, .12, .17, .94);
+		svg {
+			float: right;
+		}
+	}
+
 	.mehrlesen_arrow {
 		margin: auto 0;
 		position: relative;
@@ -38,7 +47,7 @@
 			transition: .35s all cubic-bezier(.58, .12, .17, .94);
 		}
 
-		.mehrlesen_arrow {
+		.mehrlesen_graph {
 			width: 160px;
 			transition: .35s all cubic-bezier(.58, .12, .17, .94);
 		}

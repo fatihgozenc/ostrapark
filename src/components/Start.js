@@ -30,16 +30,16 @@ const Start = () => {
 					<Slider className="start-slider">
 						{data.posts['locations'].map(item => (
 							<Slide key={item.id} index={item.id} style={{ height: '100vh' }}>
-								<PageRouter route={`/locations/${item.slug}`}>
 								<div className="start-slider-item" 
 									style={{ backgroundImage: `url(${respImg(item.image.large, item.image.full)})` }}>
+								<PageRouter route={`/locations/${item.slug}`}>
 									<div className="start-slider-text">
 										<h2>{item.title}</h2>
 										<p>{item.excerpt}</p>
-										<MehrLesen/>
+										<MehrLesen color="#fff"/>
 									</div>
-								</div>
 								</PageRouter>
+								</div>
 							</Slide>
 						))}
 					</Slider>

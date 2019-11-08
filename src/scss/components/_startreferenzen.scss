@@ -59,7 +59,7 @@
 		}
 
 		.start-referenzen-img {
-			height: 20rem;
+			height: 26vh;
 			background-size: cover;
 			background-position: center;
 			background-repeat: no-repeat;
@@ -145,7 +145,7 @@
 
 	.start-referenzen-nav {
 		position: absolute;
-		bottom: 10%;
+		bottom: -10%;
 		width: 90%;
 		margin: 0 auto;
 		display: flex;
@@ -163,7 +163,7 @@
 			width: 1.5rem;
 			border: none;
 			background: $darkGray;
-			border-radius: 1.5rem;
+			border-radius: 5rem;
 			transform: scale(.3);
 			transition: .5s all;
 
