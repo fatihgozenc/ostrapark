@@ -3,24 +3,25 @@ form {
 	.form-check-group {
 		padding: 5%;
 	}
+
 	@include md {
-		display:flex;
+		display: flex;
 		flex-wrap: wrap;
 
 		.form-block {
 			flex: 1 0 48%;
 		}
 
-		.form-block:nth-child(odd){
+		.form-block:nth-child(odd) {
 			margin-right: 2%;
 		}
 
-		.form-block:nth-child(8){
+		.form-block:nth-child(8) {
 			flex: 1 0 100%;
-		
+
 		}
 
-		.form-block:nth-child(4){
+		.form-block:nth-child(4) {
 			flex: 1 0 100%;
 
 			@include lg {
@@ -28,7 +29,7 @@ form {
 			}
 		}
 
-		.form-block:nth-child(7){
+		.form-block:nth-child(7) {
 
 			@include lg {
 				margin-right: 0;
@@ -51,8 +52,8 @@ form {
 		}
 	}
 
-	@include lg {
-		padding: 0 11vw;
+	@include xl {
+		padding: 0 9vw;
 	}
 }
 
@@ -62,11 +63,13 @@ ul {
 	margin: 0;
 }
 
-.form-block{
+.form-block {
 	margin: 16% 0;
+
 	@include md {
 		margin: 4% 0;
 	}
+
 	position: relative;
 
 	label {
@@ -74,7 +77,7 @@ ul {
 		text-transform: uppercase;
 		letter-spacing: 2px;
 		display: block;
-		transition: all .35s ease;	
+		transition: all .35s ease;
 	}
 
 	select {
@@ -86,14 +89,13 @@ ul {
 		background: transparent;
 		box-shadow: $lightGray 1px 1px 8px inset;
 		font-size: 1.2rem;
-		
-		&::-webkit-select-edit { padding-left: 1rem; }
 
-		option{
-			color:red;
+		&::-webkit-select-edit {
+			padding-left: 1rem;
 		}
 	}
-	input{
+
+	input {
 		font-family: inherit;
 		width: 95%;
 		height: 3.2rem;
@@ -103,9 +105,13 @@ ul {
 		box-shadow: $lightGray 1px 1px 8px inset;
 		font-size: 1.2rem;
 		background: transparent;
-		&::-webkit-datetime-edit { padding-left: 1rem; }
+
+		&::-webkit-datetime-edit {
+			padding-left: 1rem;
+		}
 	}
-	textarea{
+
+	textarea {
 		width: 95%;
 		border: none;
 		border-radius: 5px;
@@ -123,6 +129,7 @@ ul {
 	input {
 		box-shadow: initial;
 	}
+
 	label {
 		padding: 0;
 		display: inline-block;
@@ -131,11 +138,12 @@ ul {
 
 .form-check-input {
 	width: auto !important;
-	
+
 }
 
 .form-block-checkbox {
 	position: relative;
+
 	@include md {
 		font-size: .9em;
 	}
@@ -143,26 +151,27 @@ ul {
 
 
 .floating-label-field {
-	
+
 	border-width: 0;
 	color: rgba(#2c3e50, .75);
+
 	&:focus {
 		outline: 0;
 		box-shadow: 0;
 	}
-  
+
 	&::placeholder {
 		color: transparent;
 	}
 
-	& + .floating-label {
+	&+.floating-label {
 		font-size: 10px;
 		z-index: -1;
 		position: absolute;
 		top: 0;
 		left: 0;
 		user-select: none;
-		transition: transform .35s, opacity .35s cubic-bezier(.59,0,.36,1.01);
+		transition: transform .35s, opacity .35s cubic-bezier(.59, 0, .36, 1.01);
 		transform-origin: 0 0;
 		opacity: 1;
 		line-height: 1;
@@ -179,7 +188,8 @@ ul {
 	&:focus,
 	&:not(:placeholder-shown) {
 		border-color: rgba(white, .1);
-		& + .floating-label {
+
+		&+.floating-label {
 			transform: translate(1%, -30%) scale(.8);
 			opacity: .5;
 		}
@@ -187,7 +197,8 @@ ul {
 
 	&:not(:placeholder-shown):invalid {
 		border-color: red 1px solid;
-		& + .floating-label {
+
+		&+.floating-label {
 			transform: translate(1%, -30%) scale(.8);
 			opacity: 1;
 			color: darken(red, 20%);
@@ -197,17 +208,18 @@ ul {
 
 .floated {
 	opacity: 1;
-    top: 0;
+	top: 0;
 	position: absolute;
-	
+
 	@include md {
 		transform: translate(-9%, -90%) scale(0.8);
 	}
 }
 
 .notinput {
-	opacity:1 !important;
+	opacity: 1 !important;
 	transform: translateY(-3rem) !important;
+
 	@include md {
 		transform: inherit;
 	}
@@ -219,11 +231,11 @@ ul {
 	font-size: .8rem;
 	letter-spacing: 2px;
 	position: absolute;
-	bottom: -1.6rem;
+	top: -3rem;
 	left: 1rem;
 }
 
-.form-submit{
+.form-submit {
 	font-family: inherit;
 	position: relative;
 	border-radius: .5rem;
@@ -234,12 +246,14 @@ ul {
 	background: transparent;
 	letter-spacing: 3px;
 	color: $darkGray;
-	transition: all .35s cubic-bezier(.59,0,.36,1.01);
+	transition: all .35s cubic-bezier(.59, 0, .36, 1.01);
+	transform: scale(1);
+	opacity: 1;
 
 	&:hover {
-		color:#fff;
+		color: #fff;
 		background: $darkGray;
-		transition: all .35s cubic-bezier(.59,0,.36,1.01);
+		transition: all .35s cubic-bezier(.59, 0, .36, 1.01);
 		letter-spacing: 8px;
 	}
 }
@@ -249,10 +263,63 @@ ul {
 	align-items: center;
 	position: relative;
 	height: 30rem;
+	width: 100%;
+
+	@include xl {
+		height: 15rem;
+	}
 }
 
 .form_send-success {
 	height: 30rem;
 	position: absolute;
 	top: 0;
+	display: flex;
+	width: 100%;
+	align-items: center;
+
+	@include xl {
+		height: 15rem;
+	}
+
+	svg {
+		opacity: 0;
+		transition: .5s all;
+		width: 160px;
+		height: 160px;
+		margin: 0 auto;
+		transform-origin: center;
+		animation: 1s turning infinite linear;
+	}
+}
+
+@keyframes turning {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.form_send-success-msg {
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: .9em;
+	opacity: 0;
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	margin: 0;
+	transition: all 0.4s;
+}
+
+.d-none {
+	display: none;
+}
+
+.goAway {
+	transform: scale(.4);
+	opacity: 0;
 }

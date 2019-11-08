@@ -1,19 +1,60 @@
 .locations-props {
 	display: none;
+
 	@include md {
 		display: flex;
 	}
+
 	height: 50vh;
 	align-items: center;
-	margin-bottom: 10vh;
+	margin-bottom: 3vh;
+
+	@include xl {
+		margin-bottom: 10vh;
+	}
 
 	span {
 		display: block;
 		text-align: center;
 		padding: 10%;
+
+
 	}
 
 	.locations-props-icons {
+
+		span:not(.icon-group) {
+
+			i {
+				display: block;
+				margin: 0 auto;
+				padding-bottom: 1rem;
+
+			}
+		}
+
+		.icon-group {
+			i {
+				margin: 0;
+				padding: 0 .7rem;
+
+				&:last-child {
+					border-left: 1px solid $midGray;
+				}
+			}
+		}
+
+		span {
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			font-size: .7em;
+
+			@include xxl {
+				font-size: .9em;
+				padding: 11.6%;
+			}
+		}
+
 		width: 16%;
 		border-right: 1px solid $darkGray;
 	}
@@ -27,12 +68,12 @@
 		}
 
 		span {
-			padding: 11%;
+			padding: 13.6%;
 			font-size: 1.1rem;
 			text-transform: uppercase;
 			letter-spacing: 1.6px;
 		}
-		
+
 	}
 }
 
@@ -50,10 +91,11 @@
 	@include md {
 		display: block;
 	}
+
 	text-align: center;
 	height: 100%;
-    width: 100%;
-    border: 0;
+	width: 100%;
+	border: 0;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	background: #000;
@@ -65,7 +107,7 @@
 		animation: arrowDownAnim 1.6s infinite linear;
 	}
 
-	&:hover > span {
+	&:hover>span {
 		animation: none;
 	}
 }
@@ -80,6 +122,7 @@
 		opacity: 1;
 		transform: scaleY(1.5) translateY(50%);
 	}
+
 	100% {
 		opacity: 0;
 		transform: scaleY(3) translateY(100%);

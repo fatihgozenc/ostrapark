@@ -4,13 +4,14 @@
 	display: flex;
 	letter-spacing: 1.5px;
 	font-size: .95rem !important;
-	transition: .35s all cubic-bezier(.58,.12,.17,.94);
+	transition: .35s all cubic-bezier(.58, .12, .17, .94);
 	align-items: center;
 
 	.mehrlesen_text {
 		font-weight: 900;
 		transition: inherit;
 	}
+
 	.mehrlesen_arrow {
 		margin: auto 0;
 		position: relative;
@@ -34,12 +35,12 @@
 	&:hover {
 		.mehrlesen_text {
 			letter-spacing: 5px;
-			transition: .35s all cubic-bezier(.58,.12,.17,.94);
+			transition: .35s all cubic-bezier(.58, .12, .17, .94);
 		}
 
 		.mehrlesen_arrow {
 			width: 160px;
-			transition: .35s all cubic-bezier(.58,.12,.17,.94);
+			transition: .35s all cubic-bezier(.58, .12, .17, .94);
 		}
 	}
 }

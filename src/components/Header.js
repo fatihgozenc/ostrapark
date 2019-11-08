@@ -62,7 +62,6 @@ const Header = () => {
 
 	return (
 		<animated.div style={opening}>
-
 			<header ref={header}>
 				<nav className="navbar">
 					<NavLink className="navbar-item" to={'/'} onClick={toggle ? toggleAnimScroll : window.scrollTo(0, 0)} >

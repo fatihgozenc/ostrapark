@@ -2,9 +2,6 @@ import React from 'react';
 import { Switch, Route, __RouterContext } from 'react-router-dom';
 import { useTransition, animated, useSpring } from 'react-spring';
 
-
-// import Search from './pages/Search';
-// import NotFound from './pages/NotFound';
 import { HomeProvider } from './context/HomeContext';
 import { LocationsProvider } from './context/LocationsContext';
 import { ReferenzenProvider } from './context/ReferenzenContext';
@@ -26,7 +23,7 @@ import './App.scss';
 const App = () => {
 	const { location } = React.useContext(__RouterContext);
 	const transitions = useTransition(location, location => location.pathname, {
-		from: {  opacity: 0 },
+		from: { opacity: 0 },
 		enter: { opacity: 1 },
 		leave: { position: 'absolute', opacity: 0 }
 		// config: { delay: 1000, duration: 1000}

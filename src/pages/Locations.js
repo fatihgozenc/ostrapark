@@ -25,9 +25,13 @@ const Locations = (props) => {
 				<section className="start-locations locations-page">
 					<div className="start-locations-wrapper ">
 						<div className="break">
-						<button className="scroll-to-see" onClick={scrollToSpecs} href="#spezifikationen">Spezifikationen<span>&darr;</span></button>
+							<button className="scroll-to-see" onClick={scrollToSpecs} href="#spezifikationen">{
+								window.innerWidth > 1024
+									? "Spezifikationen"
+									: "Specs"
+							}<span>&darr;</span></button>
 						</div>
-						
+
 						{data.posts.map(item => (
 							<PageRouter key={item.id} route={`/locations/${item.slug}`}>
 								<div className="start-locations-item" style={{ backgroundImage: `url(${respImg(item.image.medium, item.image.full)})` }}>
@@ -38,16 +42,16 @@ const Locations = (props) => {
 							</PageRouter>
 						))}
 					</div>
-					
+
 				</section>
 
 				<section className="locations-props" ref={locationsProps}>
 					<div className="locations-props-icons">
-						<span><i className="icon-flache"></i></span>
-						<span><i className="icon-personen"></i></span>
-						<span><i className="icon-firmen"></i><i className="icon-privat"></i></span>
-						<span><i className="icon-parkplatze"></i></span>
-						<span><i className="icon-outdoor"></i><i className="icon-indoor"></i></span>
+						<span><i className="icon-flache" />FLÄCHE</span>
+						<span><i className="icon-personen" />PERSONEN</span>
+						<span className="icon-group"><div><i className="icon-firmen" /><i className="icon-privat" /></div>FIRMEN&nbsp;&nbsp;&nbsp;PRIVAT</span>
+						<span><i className="icon-parkplatze" />PARKPLÄTZE</span>
+						<span className="icon-group"><div><i className="icon-outdoor" /><i className="icon-indoor" /></div>OUT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IN</span>
 					</div>
 					{data.posts.map(item => (
 						<div key={item.id} className="locations-props-item">

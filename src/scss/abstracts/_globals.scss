@@ -1,7 +1,8 @@
-a {	
+a {
 	text-decoration: none;
 
-	&:focus, &:active {
+	&:focus,
+	&:active {
 		outline: none !important;
 	}
 }
@@ -58,7 +59,7 @@ hr {
 	border: #666666 .5px solid;
 }
 
-.p-absolute{
+.p-absolute {
 	position: absolute;
 }
 
@@ -89,3 +90,7 @@ hr {
 	display: none;
 }
 
+.goAway {
+	transform: scale(.4);
+	opacity: 0;
+}

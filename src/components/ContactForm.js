@@ -1,30 +1,47 @@
 import React from 'react';
 import useForm from 'react-hook-form';
 import axios from 'axios';
-const MAIL_PATH = 'api/index.php';
+const MAIL_PATH = 'http://ostrapark.narciss-taurus.de/api/index.php';
 
 const ContactForm = () => {
 
 	const [dataIsSent, setDataIsSent] = React.useState("");
 	const { register, handleSubmit, watch, errors } = useForm();
-	console.log(watch());
+
+	const kontaktForm = React.useRef();
+	const sending = React.useRef();
+	const successMessage = React.useRef();
 
 	const onSubmit = (formData) => {
-		console.log(formData)
-		// e.preventDefault();
 		axios({
 			method: 'post',
 			url: `${MAIL_PATH}`,
 			headers: { 'content-type': 'application/json' },
 			data: formData
 		})
-		.then(result => setDataIsSent(result.data.sent))
-		.catch(error => console.log(error.response));
+			.then(result => setDataIsSent(result.data.sent))
+			.catch(error => console.log(error.response));
 	}
+
+	const sendPostAnim = (e) => {
+		if (watch('nachname').length > 2 && watch('vorname').length > 2 && watch('useremail').length > 2 && watch('nachricht').length > 2) {
+			e.target.classList.add('goAway')
+			sending.current.classList.add('d-show');
+			setTimeout(() => {
+				sending.current.classList.add('goAway');
+				sending.current.classList.remove('d-show');
+				setTimeout(() => {
+					successMessage.current.classList.add('d-show')
+				}, 150);
+			}, 1500);
+		} else return null
+	}
+
 	return (
 		<div className="contact-form">
-			<form onSubmit={handleSubmit(onSubmit)}>
+			<form ref={kontaktForm} onSubmit={handleSubmit(onSubmit)}>
 				<div className="form-block">
+					{errors.useremail && <span className="form-notvalid">Dieses Feld wird benötigt</span>}
 					<select className="floating-label-field" placeholder="Location Auswahlen" name="location" ref={register({ required: true })}>
 						<option value="Ostra-Areal Dresden">Ostra-Areal Dresden</option>
 						<option value="Erlwein Capitol">Erlwein Capitol</option>
@@ -63,11 +80,13 @@ const ContactForm = () => {
 					<label className="floating-label floated" htmlFor={`teilnehmerzahl`}>Geplante Teilnehmeranzahl:</label>
 				</div>
 				<div className="form-block">
-					<input className="floating-label-field" placeholder="vorname" name="vorname" required ref={register({ required: true })} />
+					{errors.vorname && <span className="form-notvalid">Dieses Feld wird benötigt</span>}
+					<input className="floating-label-field" placeholder="vorname" name="vorname" ref={register({ required: true })} />
 					<label className="floating-label" htmlFor="vorname">Vorname*</label>
 				</div>
 				<div className="form-block">
-					<input className="floating-label-field" placeholder="nachname" name="nachname" required ref={register({ required: true })} />
+					{errors.nachname && <span className="form-notvalid">Dieses Feld wird benötigt</span>}
+					<input className="floating-label-field" placeholder="nachname" name="nachname" ref={register({ required: true })} />
 					<label className="floating-label" htmlFor="nachname">Nachname*</label>
 				</div>
 
@@ -96,27 +115,24 @@ const ContactForm = () => {
 						<input className="floating-label-field" name="acceptance" type="checkbox" ref={register({ required: true })} />Ich stimme mit den
 						<a href="/datenschutz"> <b>Datenschutzbedingungen</b></a> von Golden Door GmbH überein.</label>
 				</div>
-
 				<div className="form_send">
-					<input className="floating-label-field" type="submit" className="form-submit" value="Senden &rarr;" />
 					<div className="form_send-success">
-						<svg style={{width: 160, height: 160}}>
+						<svg ref={sending}>
 							<defs>
 								<linearGradient id="linear" x1="0%" y1="0%" x2="100%" y2="0%">
-									<stop offset="0%"   stop-color="#fff"/>
-									<stop offset="100%" stop-color="#666"/>
+									<stop offset="0%" stopColor="#fff" />
+									<stop offset="100%" stopColor="#666" />
 								</linearGradient>
 							</defs>
-
-							<circle cx="80" cy="80" r="70" stroke="url(#linear)" fill="transparent" strokeWidth="5"/>
-
+							<circle cx="80" cy="80" r="70" stroke="url(#linear)" fill="transparent" strokeWidth="5" />
 						</svg>
+						<p ref={successMessage} className="form_send-success-msg">Your mail has sent<br />This is second line</p>
 					</div>
+					<input onClick={sendPostAnim} className="floating-label-field" type="submit" className="form-submit" value="Senden &rarr;" />
 				</div>
 			</form>
 		</div >
 	);
 }
-
 
 export default ContactForm;
