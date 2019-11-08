@@ -14,20 +14,32 @@
 
 	img {
 		height: 7rem;
+
+		@include md {
+			height: auto;
+			width: 23rem;
+			order: -1;
+		}
 	}
 
 	ul {
 		font-size: inherit;
 		list-style-type: none;
 		padding: 0;
+		margin: 0 0 2rem 0;
+
+		@include lg {
+			margin: 0;
+		}
 
 		li {
 			padding: 1% 0;
 			font-weight: 700;
+			font-size: 1.6rem;
 
 			@include md {
 				text-transform: uppercase;
-				font-size: 1rem;
+				font-size: .8em;
 				padding: 2% 0;
 				letter-spacing: 1.5px;
 			}
@@ -40,6 +52,8 @@
 		
 		.location-overview {
 			flex: 1 0 45%;
+			display: flex;
+			flex-direction: column;
 		}
 
 		.location-detail {
@@ -59,4 +73,22 @@
 		background-size: cover;
 		background-position: center;
 	}
+}
+
+.location-type {
+	font-size: .8em;
+	margin: 0 0 3rem 0;
+	letter-spacing: 2px;
+
+	@include md {
+		margin: 0 0 2rem 0;
+	}
+
+	@include lg {
+		margin: 2rem 0 .5rem 0;
+	}
+}
+
+.social_icongroup {
+	margin-bottom: 2rem;
 }

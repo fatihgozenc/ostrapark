@@ -20,9 +20,25 @@
 			margin-bottom: 1rem;
 		}
 
+		.section-title-bg {
+			top: -77%;
+
+			@include md {
+				top: 3%
+			}
+
+			@include lg {
+				top: -77%
+			}
+
+			@include xl {
+				top: inherit
+			}
+		}
+
 		span {
-			display: none;
-			@include lg{
+			font-weight: 500;
+			@include xl{
 				display: block;
 				position: absolute;
 				opacity: .1;
@@ -58,8 +74,6 @@
 			}
 		}
 	}
-
-	
 
 	.start-locations-item {
 		background-color: #000;

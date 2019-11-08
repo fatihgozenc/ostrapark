@@ -84,7 +84,6 @@ ul {
 		width: 99%;
 		height: 3.2rem;
 		border-radius: .3rem;
-		border: $lightGray 1px solid;
 		padding-left: 2rem;
 		background: transparent;
 		box-shadow: $lightGray 1px 1px 8px inset;
@@ -100,7 +99,6 @@ ul {
 		width: 95%;
 		height: 3.2rem;
 		border-radius: .3rem;
-		border: $lightGray 1px solid;
 		padding-left: 1rem;
 		box-shadow: $lightGray 1px 1px 8px inset;
 		font-size: 1.2rem;
@@ -114,7 +112,6 @@ ul {
 	textarea {
 		width: 95%;
 		border: none;
-		border: $lightGray 1px solid;
 		border-radius: 5px;
 		padding: 1rem;
 		background: transparent;
@@ -148,13 +145,17 @@ ul {
 }
 
 .form-block-checkbox {
+	
 	position: relative;
+
+	input {
+		-webkit-appearance: checkbox;
+	}
 
 	@include md {
 		font-size: .9em;
 	}
 }
-
 
 .floating-label-field {
 	-webkit-appearance: none;

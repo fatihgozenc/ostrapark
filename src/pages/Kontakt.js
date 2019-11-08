@@ -17,10 +17,10 @@ const Kontakt = (props) => {
 				imgSmall={item.image.large}
 				imgMedium={item.image.large}
 				imgFull={item.image.full}
-				type="locations"
+				type="large"
 			/>
 			<section className="layout page-kontakt">
-				<ContactForm />
+				<ContactForm data={data} />
 			</section>
 		</>
 	)

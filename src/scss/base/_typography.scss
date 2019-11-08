@@ -97,13 +97,17 @@
 .section-title-bg {
 	position: absolute;
 	top: -15%;
-	font-size: 15.5vw;
+	font-size: 14.3vw;
 	opacity: .1;
 	z-index: -1;
+	left: 0;
+	right: 0;
 
 	@include lg {
+		left: initial;
+		right: initial;
 		top: -10vw;
-
+		font-size: 15.5vw;
 		
 	}
 }

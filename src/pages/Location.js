@@ -23,10 +23,13 @@ const Location = (props) => {
 
 			<section className="location">
 				<div className="location-overview">
+					<h2 className="location-type">{item.type}</h2>
 					<img src={item.logo} alt={item.title + ' Logo'} />
 					<p>{item.content}</p>
-					<a href={item.facebook}><i className="icon-facebook"></i></a>
-					<a href={item.instagram}><i className="icon-instagram"></i></a>
+					<div className="social_icongroup">
+						<a href={item.facebook}><i className="icon-facebook"></i></a>
+						<a href={item.instagram}><i className="icon-instagram"></i></a>
+					</div>
 					<ul>{itemDetails.map(detail => (
 						<li key={Math.random()}>{detail}</li>
 					))}</ul>

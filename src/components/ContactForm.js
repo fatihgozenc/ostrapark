@@ -3,7 +3,7 @@ import useForm from 'react-hook-form';
 import axios from 'axios';
 const MAIL_PATH = 'http://ostrapark.narciss-taurus.de/api/index.php';
 
-const ContactForm = () => {
+const ContactForm = (props) => {
 
 	const [dataIsSent, setDataIsSent] = React.useState("");
 	const { register, handleSubmit, watch, errors } = useForm();
@@ -23,6 +23,8 @@ const ContactForm = () => {
 			.catch(error => console.log(error.response));
 	}
 
+	console.log(props.data)
+
 	const sendPostAnim = (e) => {
 		if (watch('nachname').length > 2 && watch('vorname').length > 2 && watch('useremail').length > 2 && watch('nachricht').length > 2) {
 			e.target.classList.add('goAway')
@@ -41,9 +43,9 @@ const ContactForm = () => {
 		<div className="contact-form">
 			<form ref={kontaktForm} onSubmit={handleSubmit(onSubmit)}>
 				<div className="form-block">
-					{errors.useremail && <span className="form-notvalid">Dieses Feld wird benötigt</span>}
+					{errors.location && <span className="form-notvalid">Dieses Feld wird benötigt</span>}
 					<select className="floating-label-field" placeholder="Location Auswahlen" name="location" ref={register({ required: true })}>
-						<option value="Ostra-Areal Dresden">Ostra-Areal Dresden</option>
+						<option value="Ostra-Areal Dresden">Open-Air</option>
 						<option value="Erlwein Capitol">Erlwein Capitol</option>
 						<option value="Erlwein Forum">Erlwein Forum</option>
 						<option value="Seehaus">Seehaus</option>
