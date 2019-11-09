@@ -24,21 +24,22 @@ const Start = () => {
 					totalSlides={4}
 					isPlaying={true}
 					interval={6000}
+					lockOnWindowScroll={true}
 					touchEnabled={respImg(true, false)}
 					dragEnabled={respImg(true, false)}
 					infinite={respImg(true, false)}>
 					<Slider className="start-slider">
 						{data.posts['locations'].map(item => (
 							<Slide key={item.id} index={item.id} style={{ height: '100vh' }}>
-								<div className="start-slider-item" 
+								<div className="start-slider-item"
 									style={{ backgroundImage: `url(${respImg(item.image.large, item.image.full)})` }}>
-								<PageRouter route={`/locations/${item.slug}`}>
-									<div className="start-slider-text">
-										<h2>{item.title}</h2>
-										<p>{item.excerpt}</p>
-										<MehrLesen color="#fff"/>
-									</div>
-								</PageRouter>
+									<PageRouter route={`/locations/${item.slug}`}>
+										<div className="start-slider-text">
+											<h2>{item.title}</h2>
+											<p>{item.excerpt}</p>
+											<MehrLesen color="#fff" />
+										</div>
+									</PageRouter>
 								</div>
 							</Slide>
 						))}

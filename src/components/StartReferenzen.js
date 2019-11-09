@@ -13,13 +13,14 @@ const StartReferenzen = () => {
 	return (
 		<section className="start-referenzen">
 			<PageRouter route={`/referenzen`} >
-			<h2 className="section-title">REFERENZEN</h2></PageRouter>
+				<h2 className="section-title">REFERENZEN</h2></PageRouter>
 			<CarouselProvider
 				naturalSlideWidth={respFunction(100, 170, 320)}
 				naturalSlideHeight={respFunction(140, 100, 100)}
 				totalSlides={6}
 				isPlaying={true}
 				interval={6000}
+				lockOnWindowScroll={true}
 				touchEnabled={respFunction(true, true, false)}
 				dragEnabled={respFunction(true, true, false)}
 				infinite={respFunction(true, true, false)}>
@@ -28,13 +29,13 @@ const StartReferenzen = () => {
 						<Slide key={item.id} index={item.id}>
 							<PageRouter route={`/referenzen/${item.slug}`}>
 								<div className="start-referenzen-item">
-									<div className="start-referenzen-img" 
-									style={{ backgroundImage: `url(${respImg(item.image.medium, item.image.large)})` }} />
+									<div className="start-referenzen-img"
+										style={{ backgroundImage: `url(${respImg(item.image.medium, item.image.large)})` }} />
 									<div className="break" />
 									<div className="start-referenzen-text">
 										<h2 className="section-subtitle">{item.title}</h2>
 										<p>{item.excerpt}</p>
-										<MehrLesen/>
+										<MehrLesen />
 									</div>
 								</div>
 							</PageRouter>
