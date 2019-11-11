@@ -2,7 +2,6 @@ import React from 'react';
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import respFunction from '../helpers/respFunction';
 import { ReferenzenContext } from '../context/ReferenzenContext';
-import PageRouter from '../components/PageRouter';
 import Hero from '../components/Hero';
 import ReferenzenNav from '../components/ReferenzenNav';
 import { Helmet } from "react-helmet";
@@ -30,10 +29,13 @@ const Referenz = (props) => {
 	const selectedPostKey = matchedValue(idValues);
 
 	const paragraphs = item.content.split("\n\r");
+	const getSentences = /([A-Z][^\.!?]*[\.!?])/g;
+	const allSentences = paragraphs[0].match(getSentences);
+	console.log(allSentences)
 	const sentences = paragraphs[0];
-	const getHalf = Math.ceil(sentences.length / 2)
-	const firstHalfOfParagraph = sentences.slice(0, getHalf);
-	const lastHalfOfParagraph = sentences.slice(getHalf, sentences.length);
+	const getHalf = Math.ceil(allSentences.length / 2)
+	const firstHalfOfParagraph = allSentences.slice(0, getHalf);
+	const lastHalfOfParagraph = allSentences.slice(getHalf, allSentences.length);
 
 	return (
 		<>
@@ -77,7 +79,7 @@ const Referenz = (props) => {
 					</CarouselProvider>
 				</div>
 				<div className="referenz-text">
-					{console.log(firstHalfOfParagraph, lastHalfOfParagraph)}
+					{/* {console.log(firstHalfOfParagraph, lastHalfOfParagraph)} */}
 
 					{paragraphs[1] === undefined
 						? <><p>{firstHalfOfParagraph}</p><div className="break" /><p>{lastHalfOfParagraph}</p></>
