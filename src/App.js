@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route, __RouterContext } from 'react-router-dom';
 import { useTransition, animated, useSpring } from 'react-spring';
+import { Helmet } from "react-helmet";
 
 import { HomeProvider } from './context/HomeContext';
 import { LocationsProvider } from './context/LocationsContext';
@@ -17,6 +18,7 @@ import Referenz from './pages/Referenz.js';
 import Kontakt from './pages/Kontakt.js';
 import Impressum from './pages/Impressum.js';
 import Datenschutz from './pages/Datenschutz.js';
+
 
 import './App.scss';
 
@@ -36,6 +38,11 @@ const App = () => {
 
 	return (
 		<HomeProvider>
+			<Helmet>
+				<title>Zentrum für Eventkultur in Dresden | Ostra-Areal</title>
+				<meta name="description" content="Als Manufaktur für Erlebnismarketing Dresden ✓Firmenevents ✓Konzerte ✓Festivals ✓Open Air ✓Messen ✓Tagungen ➤ Jetzt Location mieten!" />
+				<meta name="keywords" content="Event, Events, Location, Veranstaltungen, Veranstaltung, Konzerte, Hallen, Konzert, Messen, Halle, Messehalle, Ausstellungen, Ausstellungsfläche, Party, Feier, Parties, feiern, Parties feieren, Präsentationen, Praesentation, Großveranstaltung, Groß Event, Club's, Club, Künstler, Musik, Meinel, Kulturmanagement, Dresden, Kultur" />
+			</Helmet>
 			<Header />
 			<animated.div style={opening}>
 				<main className="app" >

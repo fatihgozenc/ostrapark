@@ -3,6 +3,7 @@ import { LocationsContext } from '../context/LocationsContext';
 import PageRouter from '../components/PageRouter';
 import { respImg } from '../helpers/respImg';
 import Hero from '../components/Hero';
+import { Helmet } from "react-helmet";
 
 const Locations = (props) => {
 	const [data] = React.useContext(LocationsContext);
@@ -14,6 +15,10 @@ const Locations = (props) => {
 
 	return (
 		<>
+			<Helmet>
+				<title>Locations | Ostra-Areal</title>
+				<link rel="canonical" href={`http://ostrapark-location.de/locations`} />
+			</Helmet>
 			<Hero title={(props.match.path).replace('/', '')}
 				imgSmall={data.posts[0].image.medium}
 				imgMedium={data.posts[0].image.medium}

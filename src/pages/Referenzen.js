@@ -4,6 +4,7 @@ import PageRouter from '../components/PageRouter';
 import MehrLesen from '../components/MehrLesen';
 import respFunction from '../helpers/respFunction';
 import Hero from '../components/Hero'
+import { Helmet } from "react-helmet";
 
 
 const Referenzen = (props) => {
@@ -11,6 +12,10 @@ const Referenzen = (props) => {
 
 	return (
 		<>
+			<Helmet>
+				<title>Referenzen | Ostra-Areal</title>
+				<link rel="canonical" href={`http://ostrapark-location.de/referenzen`} />
+			</Helmet>
 			<Hero title={(props.match.path).replace('/', '')}
 				imgSmall={data.posts[3].image.large}
 				imgMedium={data.posts[3].image.large}
@@ -20,40 +25,40 @@ const Referenzen = (props) => {
 
 			<section className="referenzen-list">
 				{data.posts.map((item, key) => (
-					<PageRouter key={item.id}  route={`/referenzen/${item.slug}`}>
-					{key % 2 > 0 && window.innerWidth > 767
-						? <div className="referenzen_list_item">
-							<div className="referenzen_list_item-text">
-								<h2 className="section-subtitle">{item.title}</h2>
-								<p>{item.excerpt}</p>
-								<MehrLesen/>
+					<PageRouter key={item.id} route={`/referenzen/${item.slug}`}>
+						{key % 2 > 0 && window.innerWidth > 767
+							? <div className="referenzen_list_item">
+								<div className="referenzen_list_item-text">
+									<h2 className="section-subtitle">{item.title}</h2>
+									<p>{item.excerpt}</p>
+									<MehrLesen />
+								</div>
+								<div className="break" />
+								<div className="referenzen_list_item-img" style={{
+									backgroundImage: `url(${respFunction(
+										item.image.thumbnail,
+										item.image.medium,
+										item.image.full)})`
+								}} />
 							</div>
-							<div className="break" />
-							<div className="referenzen_list_item-img" style={{
-								backgroundImage: `url(${respFunction(
-									item.image.thumbnail,
-									item.image.medium,
-									item.image.full)})`
-							}} />
-						</div>
 
-						: <div key={item.id} className="referenzen_list_item">
-							<div className="referenzen_list_item-img" style={{
-								backgroundImage: `url(${respFunction(
-									item.image.thumbnail,
-									item.image.medium,
-									item.image.full)})`
-							}} />
-							<div className="break" />
-							<div className="referenzen_list_item-text">
-								<h2 className="section-subtitle">{item.title}</h2>
-								<p>{item.excerpt}</p>
-								<MehrLesen/>
-							</div>
-						</div>}
+							: <div key={item.id} className="referenzen_list_item">
+								<div className="referenzen_list_item-img" style={{
+									backgroundImage: `url(${respFunction(
+										item.image.thumbnail,
+										item.image.medium,
+										item.image.full)})`
+								}} />
+								<div className="break" />
+								<div className="referenzen_list_item-text">
+									<h2 className="section-subtitle">{item.title}</h2>
+									<p>{item.excerpt}</p>
+									<MehrLesen />
+								</div>
+							</div>}
 					</PageRouter>
 				))}
-				
+
 			</section>
 		</>
 	)

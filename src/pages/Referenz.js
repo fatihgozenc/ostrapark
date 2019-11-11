@@ -5,6 +5,7 @@ import { ReferenzenContext } from '../context/ReferenzenContext';
 import PageRouter from '../components/PageRouter';
 import Hero from '../components/Hero';
 import ReferenzenNav from '../components/ReferenzenNav';
+import { Helmet } from "react-helmet";
 
 const Referenz = (props) => {
 	const [data] = React.useContext(ReferenzenContext);
@@ -30,12 +31,21 @@ const Referenz = (props) => {
 
 	const paragraphs = item.content.split("\n\r");
 	const sentences = paragraphs[0];
-	const getHalf = Math.ceil(sentences.length / 2) 
+	const getHalf = Math.ceil(sentences.length / 2)
 	const firstHalfOfParagraph = sentences.slice(0, getHalf);
 	const lastHalfOfParagraph = sentences.slice(getHalf, sentences.length);
 
 	return (
 		<>
+			<Helmet>
+				<title>{item.title} | Ostra-Areal | Zentrum für Eventkultur in Dresden</title>
+				<link rel="canonical" href={`http://ostrapark-location.de/${item.title.toLowerCase()}`} />
+				<meta name="description" content={item.content.slice(0, 100)} />
+				<meta property="og:title" content={`${item.title} | Ostra-Areal | Zentrum für Eventkultur in Dresden`} />
+				<meta property="og:description" content={item.content.slice(0, 100)} />
+				<meta name="twitter:title" content={`${item.title} | Ostra-Areal | Zentrum für Eventkultur in Dresden`} />
+				<meta name="twitter:description" content={item.content.slice(0, 100)} />
+			</Helmet>
 			<Hero title={item.title}
 				imgSmall={item.image.medium}
 				imgMedium={item.image.medium}
@@ -69,9 +79,9 @@ const Referenz = (props) => {
 				<div className="referenz-text">
 					{console.log(firstHalfOfParagraph, lastHalfOfParagraph)}
 
-					{paragraphs[1] === undefined 
-						? <><p>{firstHalfOfParagraph}</p><div className="break"/><p>{lastHalfOfParagraph}</p></>
-						: <><p>{paragraphs[0]}</p><div className="break"/><p>{paragraphs[1].replace('\n', '')}<br/>{paragraphs[2]}</p></>}
+					{paragraphs[1] === undefined
+						? <><p>{firstHalfOfParagraph}</p><div className="break" /><p>{lastHalfOfParagraph}</p></>
+						: <><p>{paragraphs[0]}</p><div className="break" /><p>{paragraphs[1].replace('\n', '')}<br />{paragraphs[2]}</p></>}
 
 				</div>
 			</section>

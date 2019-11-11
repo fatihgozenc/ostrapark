@@ -1,6 +1,7 @@
 import React from 'react';
 import Hero from '../components/Hero';
 import { HomeContext } from '../context/HomeContext';
+import { Helmet } from "react-helmet";
 
 import ContactForm from '../components/ContactForm';
 
@@ -13,6 +14,10 @@ const Kontakt = (props) => {
 
 	return (
 		<>
+			<Helmet>
+				<title>{item.title} | Ostra-Areal</title>
+				<link rel="canonical" href={`http://ostrapark-location.de/${item.title.toLowerCase()}`} />
+			</Helmet>
 			<Hero title={item.title}
 				imgSmall={item.image.large}
 				imgMedium={item.image.large}

@@ -3,7 +3,7 @@ import { LocationsContext } from '../context/LocationsContext';
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import respFunction from '../helpers/respFunction';
 import Hero from '../components/Hero';
-
+import { Helmet } from "react-helmet";
 import LocationSpecs from '../components/LocationSpecs';
 
 const Location = (props) => {
@@ -14,6 +14,15 @@ const Location = (props) => {
 
 	return (
 		<>
+			<Helmet>
+				<title>{item.title} | Ostra-Areal | Zentrum für Eventkultur in Dresden</title>
+				<link rel="canonical" href={`http://ostrapark-location.de/${item.title.toLowerCase()}`} />
+				<meta name="description" content={item.content.slice(0, 100)} />
+				<meta property="og:title" content={`${item.title} | Ostra-Areal | Zentrum für Eventkultur in Dresden`} />
+				<meta property="og:description" content={item.content.slice(0, 100)} />
+				<meta name="twitter:title" content={`${item.title} | Ostra-Areal | Zentrum für Eventkultur in Dresden`} />
+				<meta name="twitter:description" content={item.content.slice(0, 100)} />
+			</Helmet>
 			<Hero title={item.title}
 				imgSmall={item.image.medium}
 				imgMedium={item.image.large}
