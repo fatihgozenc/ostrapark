@@ -17,7 +17,7 @@ const StartReferenzen = () => {
 			<CarouselProvider
 				naturalSlideWidth={respFunction(100, 170, 320)}
 				naturalSlideHeight={respFunction(140, 100, 100)}
-				totalSlides={6}
+				totalSlides={data.posts.referenzen.length}
 				isPlaying={true}
 				interval={6000}
 				lockOnWindowScroll={true}
@@ -25,6 +25,7 @@ const StartReferenzen = () => {
 				dragEnabled={respFunction(true, true, false)}
 				infinite={respFunction(true, true, false)}>
 				<Slider className="start-referenzen-slider">
+
 					{data.posts['referenzen'].map(item => (
 						<Slide key={item.id} index={item.id}>
 							<PageRouter route={`/referenzen/${item.slug}`}>
@@ -42,6 +43,7 @@ const StartReferenzen = () => {
 						</Slide>
 					))}
 				</Slider>
+
 				<div className="referenzen-nav-group">
 					<div className="break" />
 					<DotGroup className="start-referenzen-nav" />

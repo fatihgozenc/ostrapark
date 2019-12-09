@@ -20,9 +20,9 @@ const Locations = (props) => {
 				<link rel="canonical" href={`http://ostrapark-location.de/locations`} />
 			</Helmet>
 			<Hero title={(props.match.path).replace('/', '')}
-				imgSmall={data.posts[0].image.medium}
-				imgMedium={data.posts[0].image.medium}
-				imgFull={data.posts[0].image.full}
+				imgSmall="http://ostrapark.narciss-taurus.de/wordpress/wp-content/uploads/2019/12/goldendoor_slide_2.jpg"
+				imgMedium="http://ostrapark.narciss-taurus.de/wordpress/wp-content/uploads/2019/12/goldendoor_slide_2.jpg"
+				imgFull="http://ostrapark.narciss-taurus.de/wordpress/wp-content/uploads/2019/12/goldendoor_slide_2.jpg"
 				type="locations"
 			/>
 

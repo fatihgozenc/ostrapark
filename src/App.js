@@ -19,7 +19,6 @@ import Kontakt from './pages/Kontakt.js';
 import Impressum from './pages/Impressum.js';
 import Datenschutz from './pages/Datenschutz.js';
 
-
 import './App.scss';
 
 const App = () => {

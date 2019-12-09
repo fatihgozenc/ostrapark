@@ -68,6 +68,10 @@ header {
 			text-align: center;
 			transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
 
+			@include lg {
+				font-size: 1.2rem;
+			}
+
 			@include respond-to('small') {
 				display: flex;
 				opacity: 1;

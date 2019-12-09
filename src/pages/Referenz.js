@@ -78,6 +78,7 @@ const Referenz = (props) => {
 						</div>
 					</CarouselProvider>
 				</div>
+							<h3 className="referenz-title">{item.title}</h3>
 				<div className="referenz-text">
 					{/* {console.log(firstHalfOfParagraph, lastHalfOfParagraph)} */}
 

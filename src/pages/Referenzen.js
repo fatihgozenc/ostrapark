@@ -17,9 +17,9 @@ const Referenzen = (props) => {
 				<link rel="canonical" href={`http://ostrapark-location.de/referenzen`} />
 			</Helmet>
 			<Hero title={(props.match.path).replace('/', '')}
-				imgSmall={data.posts[3].image.large}
-				imgMedium={data.posts[3].image.large}
-				imgFull={data.posts[3].image.full}
+				imgSmall={data.posts[1].image.large}
+				imgMedium={data.posts[1].image.large}
+				imgFull={data.posts[1].image.full}
 				type="large"
 			/>
 

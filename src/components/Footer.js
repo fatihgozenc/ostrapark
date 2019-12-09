@@ -52,7 +52,7 @@ const Footer = () => {
 						<div className="gd_address"><b>Golden Door GmbH</b> <br />{data.posts['gd_address']}
 							<div><b>Unser Büro in Dresden</b> <br />{data.posts['dresden_address']}</div>
 						</div>
-						<p>Ostrapark ist eine Untermarke von Golden Door</p>
+						<p>Ostra-Areal ist eine Marke von Golden Door</p>
 						<p><a href='http://goldendoor.group'>goldendoor.group</a></p>
 					</div>
 
