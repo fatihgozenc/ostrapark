@@ -11,7 +11,8 @@ if ($_POST){
 	http_response_code(200);
 	$subject = "Sie haben eine Nachricht aus ostrapark-location.de";
 	// $to = "info@ostrapark.de";
-	$to = "f.gozenc@narciss-taurus.de";
+	$to = "hallo@goldendoor.group";
+	// $to = "f.gozenc@narciss-taurus.de";
 	$from = $_POST['useremail'];
 	
 	//DATA
