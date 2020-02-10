@@ -1,7 +1,7 @@
 import React from 'react';
 import useForm from 'react-hook-form';
 import axios from 'axios';
-const MAIL_PATH = 'http://ostrapark.narciss-taurus.de/api/index.php';
+const MAIL_PATH = 'https://new.ostrapark-location.de/api/index.php';
 
 const ContactForm = (props) => {
 
