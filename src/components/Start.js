@@ -47,7 +47,7 @@ const Start = () => {
 				"http://ostrapark.narciss-taurus.de/wordpress/wp-content/uploads/2019/10/golden_door_galerie_location_erlwein_capitol_3.jpg",
 				"http://ostrapark.narciss-taurus.de/wordpress/wp-content/uploads/2019/10/golden_door_galerie_location_erlwein_capitol_1.jpg"
 			]
-		}	
+		}
 	]
 	// NORMAL DATA IS data.posts['locations'] AND IM MODIFYING IT NOW,
 
@@ -62,13 +62,13 @@ const Start = () => {
 					naturalSlideHeight={respImg(125, 100)}
 					totalSlides={unlogicalData.length}
 					isPlaying={true}
-					interval={6000}
+					interval={9000}
 					lockOnWindowScroll={true}
 					touchEnabled={respImg(true, false)}
 					dragEnabled={respImg(true, false)}
 					infinite={respImg(true, false)}>
 					<Slider className="start-slider">
-	
+
 						{unlogicalData.map(item => (
 							<Slide key={item.id} index={item.id} style={{ height: '100vh' }}>
 								<div className="start-slider-item"
@@ -83,7 +83,7 @@ const Start = () => {
 								</div>
 							</Slide>
 						))}
-						
+
 					</Slider>
 					<DotGroup disableActiveDots={false} className="start-slider-nav" />
 				</CarouselProvider>

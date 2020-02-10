@@ -11,6 +11,8 @@ const Location = (props) => {
 	const getSingleData = data.posts.filter(item => item.slug.indexOf(props.match.params.slug) !== -1);
 	const item = getSingleData[0];
 	const itemDetails = item.excerpt.split('\n');
+	const isOpenAir = item.title === 'Open-Air';
+	console.log(isOpenAir)
 
 	return (
 		<>
@@ -33,7 +35,10 @@ const Location = (props) => {
 			<section className="location">
 				<div className="location-overview">
 					<h2 className="location-type">{item.type}</h2>
-					<img src={item.logo} alt={item.title + ' Logo'} />
+					{
+						!isOpenAir &&
+						<img src={item.logo} alt={item.title + ' Logo'} />
+					}
 					<p>{item.content}</p>
 					<div className="social_icongroup">
 						<a href={item.facebook}><i className="icon-facebook"></i></a>

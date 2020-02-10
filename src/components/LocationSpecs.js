@@ -1,9 +1,10 @@
 import React from 'react';
 import IconDownload from '../assets/icons/icon-download.svg'
 
-const LocationSpecs = ({item}) => {
+const LocationSpecs = ({ item }) => {
 
-	console.log(item)
+	const isSeehaus = item.title === 'Seehaus';
+
 	return (
 		<div className="location-specs">
 			<div className="location-specs-wrapper">
@@ -12,17 +13,20 @@ const LocationSpecs = ({item}) => {
 					<div className="value">{item.flache}</div>
 				</div>
 				<div className="location-spec-item">
-					<div className="title">LÄNGE</div>
+					<div className="title">{isSeehaus ? 'TERRASSE' : 'LÄNGE'}</div>
 					<div className="value">{item.lange}</div>
 				</div>
 				<div className="location-spec-item">
-					<div className="title">BREITE</div>
+					<div className="title">{isSeehaus ? 'AUSSENBEREICH' : 'BREITE'}</div>
 					<div className="value">{item.breite}</div>
 				</div>
-				<div className="location-spec-item">
-					<div className="title">HÖHE</div>
-					<div className="value">{item.hohe}</div>
-				</div>
+				{
+					!isSeehaus &&
+					<div className="location-spec-item">
+						<div className="title">HÖHE</div>
+						<div className="value">{item.hohe}</div>
+					</div>
+				}
 				<div className="location-spec-item">
 					<div className="title">EMPFANG</div>
 					<div className="value">{item.empfang}</div>
@@ -37,7 +41,7 @@ const LocationSpecs = ({item}) => {
 				</div>
 				<div className="location-spec-item">
 					<div className="title">BANKETT</div>
-					<div className="value">{item.flache}</div>
+					<div className="value">{item.bankett}</div>
 				</div>
 			</div>
 			<button className="download-factsheet">

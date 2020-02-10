@@ -78,13 +78,15 @@ const Referenz = (props) => {
 						</div>
 					</CarouselProvider>
 				</div>
-							<h3 className="referenz-title">{item.title}</h3>
+				<h3 className="referenz-title">{item.title}</h3>
 				<div className="referenz-text">
 					{/* {console.log(firstHalfOfParagraph, lastHalfOfParagraph)} */}
-
-					{paragraphs[1] === undefined
+					<p className="referenz-content">
+						{item.content}
+					</p>
+					{/* {paragraphs[1] === undefined
 						? <><p>{firstHalfOfParagraph}</p><div className="break" /><p>{lastHalfOfParagraph}</p></>
-						: <><p>{paragraphs[0]}</p><div className="break" /><p>{paragraphs[1].replace('\n', '')}<br />{paragraphs[2]}</p></>}
+						: <><p>{paragraphs[0]}</p><div className="break" /><p>{paragraphs[1].replace('\n', '&nbsp;')}<br />{paragraphs[2]}</p></>} */}
 
 				</div>
 			</section>
