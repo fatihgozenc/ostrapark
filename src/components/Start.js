@@ -72,7 +72,7 @@ const Start = () => {
 						{unlogicalData.map(item => (
 							<Slide key={item.id} index={item.id} style={{ height: '100vh' }}>
 								<div className="start-slider-item"
-									style={{ backgroundImage: `url(${respImg(item.image.large, item.image.full)})` }}>
+									style={{ backgroundImage: `url(${respImg(item.image.medium, item.image.large)})` }}>
 									<PageRouter route={`/locations/${item.slug}`}>
 										<div className="start-slider-text">
 											<h2>{item.title}</h2>
