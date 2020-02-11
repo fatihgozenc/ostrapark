@@ -22,14 +22,14 @@ const Start = () => {
 			"slug": "",
 			"excerpt": "Mit seinen verschiedenen, flexibel nutzbaren Eventlocations auf der ehemaligen Schlachthofinsel, ermöglichen wir eine vielfältige Nutzung und vollkommen neue Veranstaltungskonzepte.",
 			"image": {
-				"medium": "http://ostrapark.narciss-taurus.de/wordpress/wp-content/uploads/2019/12/goldendoor_slide_2.jpg",
-				"large": "http://ostrapark.narciss-taurus.de/wordpress/wp-content/uploads/2019/12/goldendoor_slide_2.jpg",
-				"full": "http://ostrapark.narciss-taurus.de/wordpress/wp-content/uploads/2019/12/goldendoor_slide_2.jpg"
+				"medium": "https://ostrapark-location.de/wordpress/wp-content/uploads/2019/12/goldendoor_slide_2.jpg",
+				"large": "https://ostrapark-location.de/wordpress/wp-content/uploads/2019/12/goldendoor_slide_2.jpg",
+				"full": "https://ostrapark-location.de/wordpress/wp-content/uploads/2019/12/goldendoor_slide_2.jpg"
 			},
 			"slider": [
-				"http://ostrapark.narciss-taurus.de/wordpress/wp-content/uploads/2019/10/golden_door_galerie_location_erlwein_capitol_2.jpg",
-				"http://ostrapark.narciss-taurus.de/wordpress/wp-content/uploads/2019/10/golden_door_galerie_location_erlwein_capitol_3.jpg",
-				"http://ostrapark.narciss-taurus.de/wordpress/wp-content/uploads/2019/10/golden_door_galerie_location_erlwein_capitol_1.jpg"
+				"https://ostrapark-location.de/wordpress/wp-content/uploads/2019/10/golden_door_galerie_location_erlwein_capitol_2.jpg",
+				"https://ostrapark-location.de/wordpress/wp-content/uploads/2019/10/golden_door_galerie_location_erlwein_capitol_3.jpg",
+				"https://ostrapark-location.de/wordpress/wp-content/uploads/2019/10/golden_door_galerie_location_erlwein_capitol_1.jpg"
 			]
 		},
 		{
@@ -38,14 +38,14 @@ const Start = () => {
 			"slug": "",
 			"excerpt": "Eine faszinierende, perfekte innerstädtische Lage, die Ihrem Event auf jeden Fall einen passenden Rahmen verleiht.",
 			"image": {
-				"medium": "http://ostrapark.narciss-taurus.de/wordpress/wp-content/uploads/2019/10/highcompress-golden_door_header_referenz_jazztage-500x281.jpg",
-				"large": "http://ostrapark.narciss-taurus.de/wordpress/wp-content/uploads/2019/10/highcompress-golden_door_header_referenz_jazztage-1024x576.jpg",
-				"full": "http://ostrapark.narciss-taurus.de/wordpress/wp-content/uploads/2019/10/highcompress-golden_door_header_referenz_jazztage.jpg"
+				"medium": "https://ostrapark-location.de/wordpress/wp-content/uploads/2019/10/highcompress-golden_door_header_referenz_jazztage-500x281.jpg",
+				"large": "https://ostrapark-location.de/wordpress/wp-content/uploads/2019/10/highcompress-golden_door_header_referenz_jazztage-1024x576.jpg",
+				"full": "https://ostrapark-location.de/wordpress/wp-content/uploads/2019/10/highcompress-golden_door_header_referenz_jazztage.jpg"
 			},
 			"slider": [
-				"http://ostrapark.narciss-taurus.de/wordpress/wp-content/uploads/2019/10/golden_door_galerie_location_erlwein_capitol_2.jpg",
-				"http://ostrapark.narciss-taurus.de/wordpress/wp-content/uploads/2019/10/golden_door_galerie_location_erlwein_capitol_3.jpg",
-				"http://ostrapark.narciss-taurus.de/wordpress/wp-content/uploads/2019/10/golden_door_galerie_location_erlwein_capitol_1.jpg"
+				"https://ostrapark-location.de/wordpress/wp-content/uploads/2019/10/golden_door_galerie_location_erlwein_capitol_2.jpg",
+				"https://ostrapark-location.de/wordpress/wp-content/uploads/2019/10/golden_door_galerie_location_erlwein_capitol_3.jpg",
+				"https://ostrapark-location.de/wordpress/wp-content/uploads/2019/10/golden_door_galerie_location_erlwein_capitol_1.jpg"
 			]
 		}
 	]
