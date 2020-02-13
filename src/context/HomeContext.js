@@ -27,7 +27,6 @@ function apiCache(res, req) {
 		draft.status = 'resolved';
 		draft.data = res;
 	}));
-	// console.log(value)
 }
 
 const reducer = (currentState, action) => {
@@ -77,7 +76,6 @@ export const HomeProvider = (props) => {
 
 	return (
 		<HomeContext.Provider value={[state, dispatch]} >
-			{console.log(state)}
 			{state.loading ? <Loading /> : props.children}
 		</HomeContext.Provider>
 	)

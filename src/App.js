@@ -64,6 +64,7 @@ const App = () => {
 					</ReferenzenProvider></LocationsProvider>
 				</main>
 			</animated.div>
+
 			<Footer />
 		</HomeProvider>
 	);

@@ -7,7 +7,6 @@ const Preface = () => {
 	const prefaceContent = (data.posts.pages[3].content).toString();
 	const paragraphPattern = /[^\r\n]+((\r|\n|\r\n)[^\r\n]+)*/g;
 	const paragraphs = prefaceContent.match(paragraphPattern)
-	console.log(paragraphs)
 
 	return (
 		<section className="preface">

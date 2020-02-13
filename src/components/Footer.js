@@ -11,7 +11,6 @@ const Footer = () => {
 		opacity: 1, from: { opacity: 0 }, delay: 3000
 	})
 
-	console.log(data)
 	return (
 		<>
 			<animated.div style={opening}>
